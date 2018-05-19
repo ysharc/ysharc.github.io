@@ -5,9 +5,9 @@
   
   <link href="/atom.xml" rel="self"/>
   
-  <link href="localhost/"/>
+  <link href="https://blog.allmattersai.com/"/>
   <updated>2018-05-19T01:44:28.670Z</updated>
-  <id>localhost/</id>
+  <id>https://blog.allmattersai.com/</id>
   
   <author>
     <name>Yeshwanth Arcot</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>Multilayer Perceptrons and Activation function</title>
-    <link href="localhost/multilayer-perceptrons-and-activation-function/"/>
-    <id>localhost/multilayer-perceptrons-and-activation-function/</id>
+    <link href="https://blog.allmattersai.com/multilayer-perceptrons-and-activation-function/"/>
+    <id>https://blog.allmattersai.com/multilayer-perceptrons-and-activation-function/</id>
     <published>2018-04-09T05:42:04.000Z</published>
     <updated>2018-05-19T01:44:28.670Z</updated>
     
@@ -29,21 +29,21 @@
     
     </summary>
     
-      <category term="AI" scheme="localhost/categories/AI/"/>
+      <category term="AI" scheme="https://blog.allmattersai.com/categories/AI/"/>
     
-      <category term="Deep Learning Fundamentals" scheme="localhost/categories/AI/Deep-Learning-Fundamentals/"/>
+      <category term="Deep Learning Fundamentals" scheme="https://blog.allmattersai.com/categories/AI/Deep-Learning-Fundamentals/"/>
     
     
-      <category term="Deep Learning" scheme="localhost/tags/Deep-Learning/"/>
+      <category term="Deep Learning" scheme="https://blog.allmattersai.com/tags/Deep-Learning/"/>
     
-      <category term="Neural Networks" scheme="localhost/tags/Neural-Networks/"/>
+      <category term="Neural Networks" scheme="https://blog.allmattersai.com/tags/Neural-Networks/"/>
     
   </entry>
   
   <entry>
     <title>Neuron and the Perceptron Algorithm</title>
-    <link href="localhost/neuron-and-the-perceptron-algorithm/"/>
-    <id>localhost/neuron-and-the-perceptron-algorithm/</id>
+    <link href="https://blog.allmattersai.com/neuron-and-the-perceptron-algorithm/"/>
+    <id>https://blog.allmattersai.com/neuron-and-the-perceptron-algorithm/</id>
     <published>2018-03-28T04:10:04.000Z</published>
     <updated>2018-05-19T01:45:54.127Z</updated>
     
@@ -53,14 +53,14 @@
     
     </summary>
     
-      <category term="AI" scheme="localhost/categories/AI/"/>
+      <category term="AI" scheme="https://blog.allmattersai.com/categories/AI/"/>
     
-      <category term="Deep Learning Fundamentals" scheme="localhost/categories/AI/Deep-Learning-Fundamentals/"/>
+      <category term="Deep Learning Fundamentals" scheme="https://blog.allmattersai.com/categories/AI/Deep-Learning-Fundamentals/"/>
     
     
-      <category term="Deep Learning" scheme="localhost/tags/Deep-Learning/"/>
+      <category term="Deep Learning" scheme="https://blog.allmattersai.com/tags/Deep-Learning/"/>
     
-      <category term="Neural Networks" scheme="localhost/tags/Neural-Networks/"/>
+      <category term="Neural Networks" scheme="https://blog.allmattersai.com/tags/Neural-Networks/"/>
     
   </entry>
   
