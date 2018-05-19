@@ -70,6 +70,13 @@
     </entry>
     
     <entry>
+      <title>Topics</title>
+      <link href="/tags/index.html"/>
+      <url>/tags/index.html</url>
+      <content type="html"><![CDATA[]]></content>
+    </entry>
+    
+    <entry>
       <title>Portfolio</title>
       <link href="/portfolio/index.html"/>
       <url>/portfolio/index.html</url>
@@ -80,13 +87,6 @@
       <title>links</title>
       <link href="/resources/index.html"/>
       <url>/resources/index.html</url>
-      <content type="html"><![CDATA[]]></content>
-    </entry>
-    
-    <entry>
-      <title>Topics</title>
-      <link href="/tags/index.html"/>
-      <url>/tags/index.html</url>
       <content type="html"><![CDATA[]]></content>
     </entry>
     
