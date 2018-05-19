@@ -148,14 +148,21 @@
 
 
 
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Categories">
-<meta property="og:url" content="localhost/categories/index.html">
+  <meta name="description" content="This is the first part of the series “Deep Learning Fundamentals”. The goal of this series is to explore the mechanisms of artificial neural networks. The focus is more on presenting an intuitive way">
+<meta name="keywords" content="Deep Learning,Neural Networks">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Neuron and the Perceptron Algorithm">
+<meta property="og:url" content="localhost/neuron-and-the-perceptron-algorithm/index.html">
 <meta property="og:site_name" content="All Matters AI">
+<meta property="og:description" content="This is the first part of the series “Deep Learning Fundamentals”. The goal of this series is to explore the mechanisms of artificial neural networks. The focus is more on presenting an intuitive way">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-04-07T05:38:41.153Z">
+<meta property="og:image" content="https://www.dropbox.com/s/j6vksnlibf0yhgq/perceptron.png?raw=1">
+<meta property="og:image" content="https://imgs.xkcd.com/comics/machine_learning.png">
+<meta property="og:updated_time" content="2018-05-19T01:45:54.127Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Categories">
+<meta name="twitter:title" content="Neuron and the Perceptron Algorithm">
+<meta name="twitter:description" content="This is the first part of the series “Deep Learning Fundamentals”. The goal of this series is to explore the mechanisms of artificial neural networks. The focus is more on presenting an intuitive way">
+<meta name="twitter:image" content="https://www.dropbox.com/s/j6vksnlibf0yhgq/perceptron.png?raw=1">
 
 
 
@@ -164,7 +171,7 @@
 
 
 
-  <link rel="canonical" href="localhost/categories/">
+  <link rel="canonical" href="localhost/neuron-and-the-perceptron-algorithm/">
 
 
 
@@ -174,7 +181,7 @@
   };
 </script>
 
-  <title>Categories | All Matters AI</title>
+  <title>Neuron and the Perceptron Algorithm | All Matters AI</title>
   
 
 
@@ -3633,88 +3640,313 @@ ul.breadcrumb li+li:last-child {
           
             
 
-    
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
-
           
           <div id="content" class="content">
             
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  
+    <div class="reading-progress-bar"></div>
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="localhost/neuron-and-the-perceptron-algorithm/">
+
+    <span hidden="" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Yeshwanth Arcot">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden="" itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="All Matters AI">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-<h2 class="post-title" itemprop="name headline">Categories</h2>
-
-<div class="post-meta">
-  
-  
-
-
-
-</div>
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
-          <div class="category-all-page">
-            <div class="category-all-title">
+          <h2 class="post-title" itemprop="name headline">Neuron and the Perceptron Algorithm</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-28T09:40:04+05:30">2018-03-28</time>
+            
+
+            
+            
+              
+                
+              
+            
+
+            
+              
+              <span class="post-meta-divider">|</span>
+              
+
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-check-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Post modified:</span>
+              
+              <time title="Post modified" itemprop="dateModified" datetime="2018-05-19T07:15:54+05:30">2018-05-19</time>
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/AI/" itemprop="url" rel="index"><span itemprop="name">AI</span></a></span>
+
                 
                 
-                  
-                    
-                  
+                  , 
                 
-                  
-                    
-                  
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/AI/Deep-Learning-Fundamentals/" itemprop="url" rel="index"><span itemprop="name">Deep Learning Fundamentals</span></a></span>
+
                 
-                2 categories in total
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/neuron-and-the-perceptron-algorithm/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="neuron-and-the-perceptron-algorithm/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time≈</span>
+                
+                <span title="Reading time">0:06</span>
+              
             </div>
-            <div class="category-all">
-              <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/AI/">AI</a><span class="category-list-count">2</span><ul class="category-list-child"><li class="category-list-item"><a class="category-list-link" href="/categories/AI/Deep-Learning-Fundamentals/">Deep Learning Fundamentals</a><span class="category-list-count">2</span></li></ul></li></ul>
-            </div>
-          </div>
-        
-      </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
       
+
+      
+        <p>This is the first part of the series <em>“Deep Learning Fundamentals”</em>. The goal of this series is to explore the mechanisms of artificial neural networks. The focus is more on presenting an intuitive way of understanding neural networks. So, you can expect an emphasis on how and why things work rather than what does the job. More often than not I’ll try to use simple math without focusing on notation. Let’s jump into the fundamental unit of most of the neural networks - “a neuron”.<br><a id="more"></a></p>
+<h2 id="Neuron"><a href="#Neuron" class="headerlink" title="Neuron"></a>Neuron</h2><p>A neuron is nothing but a binary classifier. Which means given an n-dimensional space, it can divide the space into two regions. Let’s try to come up with an algorithm that does this, given that the data is linearly separable. For the sake of brevity, let’s consider that the data we deal with is numerical across all dimensions. (Dealing with other kinds of data is for another post.)</p>
+<p>Without loss of generality let’s start working with two-dimensional data. So, let’s say there are some green(0) and blue(1) points on a plane and we want a line that separates these points. An intuitive way would be to draw a line like shown in the graph below. So far so good. But what we need finally is an algorithm that does this for us all this by itself and adjusts to any new points.<br><iframe src="https://www.desmos.com/calculator/smmkhlshap?embed" width="100%" height="300px" frameborder="0" allowfullscreen=""></iframe></p>
+<h2 id="The-Search-for-a-Classifier"><a href="#The-Search-for-a-Classifier" class="headerlink" title="The Search for a Classifier"></a>The Search for a Classifier</h2><p>Let’s start with a random line in this space and then see what we must do, for creating the two regions. Let’s try it ourselves first. One way would be to rotate and translate the line until it separates the two regions. This seems intuitive enough. Play around with the interactive graph below to separate the two groups of points. Make sure the points are in their respective colored regions.</p>
+<iframe src="https://www.desmos.com/calculator/cadms8e21r" width="100%" height="600px" frameborder="0" allowfullscreen=""></iframe>
+<p>You would’ve noticed that $a$ and $b$ contribute to the rotation and $c$ contributes to translation. This makes sense because $a$ and $b$ control the slope and $c$ controls the distance from the origin. But how did you know when to stop fiddling around with those parameters? A trivial but useful answer would be to stop when there are no misclassified points.</p>
+<p>At this point, we are good to develop a general algorithm for classifying two groups of points. We would do something like this</p>
+<pre><code>Initialize random line parameters
+
+while misclassified points are present:
+
+    fiddle around with the line parameters
+</code></pre><h2 id="The-perceptron-trick"><a href="#The-perceptron-trick" class="headerlink" title="The perceptron trick"></a>The perceptron trick</h2><p>Let’s start making the algorithm a little more concrete. Let the line be <strong>$ax_1 + bx_2 + c = 0$</strong>, where we initialize <strong>$a$</strong>, <strong>$b$</strong>, <strong>$c$</strong> at random. For classifying the points, let’s first give the points some labels(0 and 1) to differentiate them. Let $P(x_1, x_2)$ be a point in our data space with a label <strong>$L_P$</strong>. If <strong>$(ax_1+ bx_2 + c &gt; 0) = L_P$</strong> then <strong>$P$</strong>‘s classification is correct.</p>
+<p>Now let’s deal with the fiddling part of the algorithm. Before we see any math on this, let’s try to build our intuition for it. Below are two cases </p>
+<ul>
+<li>case 1: <strong>$0$</strong> label point is misclassified.</li>
+<li>case 2: <strong>$1$</strong> label point is misclassified.</li>
+</ul>
+<p>See if you can come up with a general rule for modifying <strong>$a$</strong>, <strong>$b$</strong> and <strong>$c$</strong> that leads to the correct classification of these points.</p>
+<iframe src="https://www.desmos.com/calculator/684cghhob5" width="100%" height="600px" frameborder="0" allowfullscreen=""></iframe>
+<iframe src="https://www.desmos.com/calculator/nxtk6rxo4z" width="100%" height="600px" frameborder="0" allowfullscreen=""></iframe>
+<p>With a bit of effort, you can observe that the following pattern works for any situation</p>
+<ul>
+<li>increase parameters for a point labeled <strong>$1$</strong> and classified as <strong>$0$</strong>.</li>
+<li>decrease parameters for a point labeled <strong>$0$</strong> and classified as <strong>$1$</strong>.</li>
+</ul>
+<p>Don’t worry if you haven’t found this out. Try it now and see if it works. The reason you might have missed the pattern is that you were trying to</p>
+<ul>
+<li>increase one parameter and decrease another.</li>
+<li>increase or decrease the parameters by a random amount until it does the job.</li>
+</ul>
+<p>There’s nothing wrong with the above two operations because they do get the job done. But the problem is that we can’t generalize those operations for any given scenario. So, by this point, you should have a decent amount of intuition on how all this works. So, here’s how you can update the parameters. The amount by which they have to be updated is directly proportional to <strong>$x_1$</strong> for <strong>$a$</strong>, <strong>$x_2$</strong> for <strong>$b$</strong>. This translates to the following formula which works for both kinds of misclassification.</p>
+<blockquote>
+<p>For every misclassified point <strong>$P(x_1, x_2)$</strong>:</p>
+<blockquote>
+<p>   <strong>$a = a + \alpha (expected - predicted) x_1$</strong><br>   <strong>$b = b + \alpha (expected - predicted) x_2$</strong><br>   <strong>$c = c + \alpha (expected - predicted)$</strong></p>
+</blockquote>
+</blockquote>
+<p>Here <strong>$\alpha$</strong> is the proportionality constant and is like a fine-tuning knob. It controls the rate at which we change these parameters, also known as the <em>“learning rate”</em>. We need our perceptron to change the parameters in a slow manner. Because large changes often tend to misclassify points that were correctly classified before. There aren’t any fixed good values for the learning rate. See for yourself how learning rate affects the speed and performance <a href="https://www.cs.utexas.edu/~teammco/misc/perceptron/" target="_blank" rel="noopener">here</a>.</p>
+<p>In a Deep Learning setting the parameters $a$, $b$ are usually denoted by $w_1$, $w_2$ and are part of a vector $w$. $c$ is known as bias. The inputs and outputs of a neuron are as shown in the figure below.</p>
+<p>$$z = w_0 + w_1x_1 + w_2x_2 + … + w_mx_m$$</p>
+<p>$$<br>H(z) =<br>\begin{cases}<br>0  &amp; {n &lt; 0} \\<br>1 &amp; {n \geq 0}<br>\end{cases}<br>$$<br><img src="https://www.dropbox.com/s/j6vksnlibf0yhgq/perceptron.png?raw=1" alt="Perceptron"></p>
+<h2 id="The-Perceptron-Algorithm"><a href="#The-Perceptron-Algorithm" class="headerlink" title="The Perceptron Algorithm"></a>The Perceptron Algorithm</h2><p>To wrap up this section, here’s the formal definition in a deep learning setting.</p>
+<p><strong>Data</strong>: Training Data:<strong>$(x_i , y_i )$</strong>; <strong>$\forall i \in {0, 1, 2, . . . , N }$</strong>, Learning Rate: <strong>$\eta$</strong>, where</p>
+<ul>
+<li>$x_i$ is a m-dimensional input vector and $N$ is the total number of instances of our data.</li>
+<li>$x_{i, 0} = 1;$ $\forall i \in {0, 1, 2, . . . , N }$</li>
+<li>${\hat y}_i$ is the prediction of a point <strong>$(x_i , y_i )$</strong></li>
+</ul>
+<p><strong>Result</strong>: Separating Hyper-plane coefficients :<strong>$w^∗$</strong><br><strong>Initialize</strong> <strong>$w$</strong> ← random weights ; (Since $x_{i, 0} = 1, w_0$ acts as the bias without setting it explicitly.)<br><strong>repeat</strong></p>
+<blockquote>
+<p>get example <strong>$(x_i , y_i )$</strong>;<br><strong>$\hat y_i ← w^T x_i $</strong>;<br><strong>$w ← w + \eta(y_i −  {\hat y}_i )x_i$</strong></p>
+</blockquote>
+<p><strong>until</strong> convergence;</p>
+<p>Here’s your dopamine shot for making it till the end.</p>
+<p><img src="https://imgs.xkcd.com/comics/machine_learning.png" alt="XKCD comic"></p>
+
       
     </div>
+
     
+      
+
+  <div class="popular-posts-header">Related Posts</div>
+  <ul class="popular-posts">
+  
+    <li class="popular-posts-item">
+      
+      
+      <div class="popular-posts-title"><a href="/multilayer-perceptrons-and-activation-function/" rel="bookmark">Multilayer Perceptrons and Activation function</a></div>
+      
+    </li>
+  
+  </ul>
+
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Deep-Learning/" rel="tag"># Deep Learning</a>
+          
+            <a href="/tags/Neural-Networks/" rel="tag"># Neural Networks</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
+        
+
+        
+
+        
+          
+          <div id="needsharebutton-postbottom">
+            <span class="btn">
+              <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </span>
+          </div>
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/multilayer-perceptrons-and-activation-function/" rel="prev" title="Multilayer Perceptrons and Activation function">
+                Multilayer Perceptrons and Activation function <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
 
 
 
-    
-    
-    
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
@@ -3754,8 +3986,17 @@ ul.breadcrumb li+li:last-child {
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -3814,6 +4055,22 @@ ul.breadcrumb li+li:last-child {
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Neuron"><span class="nav-number">1.</span> <span class="nav-text">Neuron</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#The-Search-for-a-Classifier"><span class="nav-number">2.</span> <span class="nav-text">The Search for a Classifier</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#The-perceptron-trick"><span class="nav-number">3.</span> <span class="nav-text">The perceptron trick</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#The-Perceptron-Algorithm"><span class="nav-number">4.</span> <span class="nav-text">The Perceptron Algorithm</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -4043,6 +4300,14 @@ ul.breadcrumb li+li:last-child {
   
 
   
+    
+      
+
+
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/mathjax@2.7.1/MathJax.js?config=TeX-AMS-MML_SVG-full"></script>
+
+    
+  
 
 
   
@@ -4067,9 +4332,9 @@ ul.breadcrumb li+li:last-child {
 <script type="text/javascript" src="/bundle.js"></script><script type="text/javascript">if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
     window.Promise = null;
   };var disqus_config = function () {
-        this.page.url = 'localhost/categories/index.html';
-        this.page.identifier = 'categories/index.html';
-        this.page.title = 'Categories';
+        this.page.url = 'localhost/neuron-and-the-perceptron-algorithm/';
+        this.page.identifier = 'neuron-and-the-perceptron-algorithm/';
+        this.page.title = 'Neuron and the Perceptron Algorithm';
       };
       function loadComments () {
         var d = document, s = d.createElement('script');
@@ -4408,6 +4673,17 @@ ul.breadcrumb li+li:last-child {
       if (shouldDismissSearchPopup) {
         onPopupClose();
       }
+    });;MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });;MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
     });;pbOptions = {};
       
           pbOptions.iconStyle = "box";

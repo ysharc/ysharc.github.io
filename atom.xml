@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>All things AI</title>
+  <title>All Matters AI</title>
   
-  <subtitle>and some geek stuff!</subtitle>
+  
   <link href="/atom.xml" rel="self"/>
   
   <link href="localhost/"/>
-  <updated>2018-04-08T13:42:17.287Z</updated>
+  <updated>2018-05-19T01:44:28.670Z</updated>
   <id>localhost/</id>
   
   <author>
@@ -17,11 +17,35 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Deep Learning Fundamentals - Neuron and the Perceptron Algorithm</title>
-    <link href="localhost/2018/03/28/Getting-started-with-Deep-Learning/"/>
-    <id>localhost/2018/03/28/Getting-started-with-Deep-Learning/</id>
+    <title>Multilayer Perceptrons and Activation function</title>
+    <link href="localhost/multilayer-perceptrons-and-activation-function/"/>
+    <id>localhost/multilayer-perceptrons-and-activation-function/</id>
+    <published>2018-04-09T05:42:04.000Z</published>
+    <updated>2018-05-19T01:44:28.670Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;The-XOR-problem&quot;&gt;&lt;a href=&quot;#The-XOR-problem&quot; class=&quot;headerlink&quot; title=&quot;The XOR problem&quot;&gt;&lt;/a&gt;The XOR problem&lt;/h2&gt;&lt;p&gt;In the previous &lt;a href=&quot;/deep-learning-fundamentals-neuron-and-the-perceptron-algorithm&quot;&gt;post&lt;/a&gt; you’ve seen how a perceptron works. Now let’s dive into some more interesting problems in deep learning. What follows is the classic XOR problem. Develop a method for the correct classification of the following points.&lt;/p&gt;
+    
+    </summary>
+    
+      <category term="AI" scheme="localhost/categories/AI/"/>
+    
+      <category term="Deep Learning Fundamentals" scheme="localhost/categories/AI/Deep-Learning-Fundamentals/"/>
+    
+    
+      <category term="Deep Learning" scheme="localhost/tags/Deep-Learning/"/>
+    
+      <category term="Neural Networks" scheme="localhost/tags/Neural-Networks/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Neuron and the Perceptron Algorithm</title>
+    <link href="localhost/neuron-and-the-perceptron-algorithm/"/>
+    <id>localhost/neuron-and-the-perceptron-algorithm/</id>
     <published>2018-03-28T04:10:04.000Z</published>
-    <updated>2018-04-08T13:42:17.287Z</updated>
+    <updated>2018-05-19T01:45:54.127Z</updated>
     
     <summary type="html">
     
@@ -31,10 +55,12 @@
     
       <category term="AI" scheme="localhost/categories/AI/"/>
     
+      <category term="Deep Learning Fundamentals" scheme="localhost/categories/AI/Deep-Learning-Fundamentals/"/>
+    
     
       <category term="Deep Learning" scheme="localhost/tags/Deep-Learning/"/>
     
-      <category term="Fundamentals" scheme="localhost/tags/Fundamentals/"/>
+      <category term="Neural Networks" scheme="localhost/tags/Neural-Networks/"/>
     
   </entry>
   
