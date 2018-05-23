@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.allmattersai.com/"/>
-  <updated>2018-05-19T01:44:28.670Z</updated>
+  <updated>2018-05-23T07:32:37.416Z</updated>
   <id>https://blog.allmattersai.com/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Cost Function and Gradient Descent</title>
+    <link href="https://blog.allmattersai.com/cost-function-and-gradient-descent/"/>
+    <id>https://blog.allmattersai.com/cost-function-and-gradient-descent/</id>
+    <published>2018-05-21T03:39:54.000Z</published>
+    <updated>2018-05-23T07:32:37.416Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;In the last &lt;a href=&quot;/multilayer-perceptrons-and-activation-function&quot;&gt;post&lt;/a&gt; we’ve discussed how a Multilayer Perceptron works. Now let’s see how to search/update a set of weights to achieve a good classifer.&lt;br&gt;
+    
+    </summary>
+    
+      <category term="AI" scheme="https://blog.allmattersai.com/categories/AI/"/>
+    
+      <category term="Deep Learning Fundamentals" scheme="https://blog.allmattersai.com/categories/AI/Deep-Learning-Fundamentals/"/>
+    
+    
+      <category term="Deep Learning" scheme="https://blog.allmattersai.com/tags/Deep-Learning/"/>
+    
+      <category term="Neural Networks" scheme="https://blog.allmattersai.com/tags/Neural-Networks/"/>
+    
+  </entry>
   
   <entry>
     <title>Multilayer Perceptrons and Activation function</title>
