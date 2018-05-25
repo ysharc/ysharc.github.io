@@ -3,31 +3,6 @@
   
     
     <entry>
-      <title>Forward and Backward Propagation</title>
-      <link href="/forward-and-backward-propagation/"/>
-      <url>/forward-and-backward-propagation/</url>
-      <content type="html"><![CDATA[<p>Till now we’ve seen</p><ul><li><a href="/multilayer-perceptrons-and-activation-function/">How a Multilayer Perceptron works</a></li><li><a href="/cost-function-and-gradient-descent/">How Gradient Descent helps Multilayer Perceptron</a></li></ul><p>Now let’s see some tricks that extend these ideas to Deep neural networks and speed up the whole learning process.<br><a id="more"></a></p><h2 id="Matrix-multiplication-as-a-transformation"><a href="#Matrix-multiplication-as-a-transformation" class="headerlink" title="Matrix multiplication as a transformation"></a>Matrix multiplication as a transformation</h2><h2 id="Forward-Propagation"><a href="#Forward-Propagation" class="headerlink" title="Forward Propagation"></a>Forward Propagation</h2><h2 id="Backward-Propagation"><a href="#Backward-Propagation" class="headerlink" title="Backward Propagation"></a>Backward Propagation</h2><h3 id="Chain-Rule"><a href="#Chain-Rule" class="headerlink" title="Chain Rule"></a>Chain Rule</h3><h3 id="Cache-the-previous-output"><a href="#Cache-the-previous-output" class="headerlink" title="Cache the previous output"></a>Cache the previous output</h3>]]></content>
-      
-      <categories>
-          
-          <category> AI </category>
-          
-          <category> Deep Learning Fundamentals </category>
-          
-      </categories>
-      
-      
-        <tags>
-            
-            <tag> Deep Learning </tag>
-            
-            <tag> Neural Networks </tag>
-            
-        </tags>
-      
-    </entry>
-    
-    <entry>
       <title>Cost Function and Gradient Descent</title>
       <link href="/cost-function-and-gradient-descent/"/>
       <url>/cost-function-and-gradient-descent/</url>
@@ -106,13 +81,6 @@
   
     
     <entry>
-      <title>Hello World</title>
-      <link href="/about/index.html"/>
-      <url>/about/index.html</url>
-      <content type="html"><![CDATA[]]></content>
-    </entry>
-    
-    <entry>
       <title>Categories</title>
       <link href="/categories/index.html"/>
       <url>/categories/index.html</url>
@@ -144,6 +112,13 @@
       <title>timeline</title>
       <link href="/timeline/index.html"/>
       <url>/timeline/index.html</url>
+      <content type="html"><![CDATA[]]></content>
+    </entry>
+    
+    <entry>
+      <title>Hello World</title>
+      <link href="/about/index.html"/>
+      <url>/about/index.html</url>
       <content type="html"><![CDATA[]]></content>
     </entry>
     

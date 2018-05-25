@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.allmattersai.com/"/>
-  <updated>2018-05-24T06:02:06.082Z</updated>
+  <updated>2018-05-24T06:23:55.185Z</updated>
   <id>https://blog.allmattersai.com/</id>
   
   <author>
@@ -15,30 +15,6 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>Forward and Backward Propagation</title>
-    <link href="https://blog.allmattersai.com/forward-and-backward-propagation/"/>
-    <id>https://blog.allmattersai.com/forward-and-backward-propagation/</id>
-    <published>2018-05-26T00:42:04.000Z</published>
-    <updated>2018-05-24T06:02:06.082Z</updated>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Till now we’ve seen&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;a href=&quot;/multilayer-perceptrons-and-activation-function/&quot;&gt;How a Multilayer Perceptron works&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;/cost-function-and-gradient-descent/&quot;&gt;How Gradient Descent helps Multilayer Perceptron&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Now let’s see some tricks that extend these ideas to Deep neural networks and speed up the whole learning process.&lt;br&gt;
-    
-    </summary>
-    
-      <category term="AI" scheme="https://blog.allmattersai.com/categories/AI/"/>
-    
-      <category term="Deep Learning Fundamentals" scheme="https://blog.allmattersai.com/categories/AI/Deep-Learning-Fundamentals/"/>
-    
-    
-      <category term="Deep Learning" scheme="https://blog.allmattersai.com/tags/Deep-Learning/"/>
-    
-      <category term="Neural Networks" scheme="https://blog.allmattersai.com/tags/Neural-Networks/"/>
-    
-  </entry>
   
   <entry>
     <title>Cost Function and Gradient Descent</title>
