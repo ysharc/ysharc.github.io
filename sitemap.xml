@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.allmattersai.com/forward-and-backward-propagation/</loc>
+    
+    <lastmod>2018-05-27T03:55:39.266Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://blog.allmattersai.com/cost-function-and-gradient-descent/</loc>
     
     <lastmod>2018-05-24T06:23:55.185Z</lastmod>
