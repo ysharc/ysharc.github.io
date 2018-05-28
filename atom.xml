@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.allmattersai.com/"/>
-  <updated>2018-05-27T03:55:39.266Z</updated>
+  <updated>2018-05-28T05:30:29.961Z</updated>
   <id>https://blog.allmattersai.com/</id>
   
   <author>
@@ -21,11 +21,11 @@
     <link href="https://blog.allmattersai.com/forward-and-backward-propagation/"/>
     <id>https://blog.allmattersai.com/forward-and-backward-propagation/</id>
     <published>2018-05-26T00:42:04.000Z</published>
-    <updated>2018-05-27T03:55:39.266Z</updated>
+    <updated>2018-05-28T05:30:29.961Z</updated>
     
     <summary type="html">
     
-      &lt;p&gt;Till now we’ve seen&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;a href=&quot;/multilayer-perceptrons-and-activation-function/&quot;&gt;How a Multilayer Perceptron works&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;/cost-function-and-gradient-descent/&quot;&gt;How Gradient Descent helps Multilayer Perceptron&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Now let’s see some tricks that extend these ideas to Deep neural networks and speed up the whole learning process.&lt;br&gt;
+      &lt;p&gt;Till now we’ve seen&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;a href=&quot;/multilayer-perceptrons-and-activation-function/&quot;&gt;How a Multilayer Perceptron works&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;/cost-function-and-gradient-descent/&quot;&gt;How Gradient Descent helps Multilayer Perceptron&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Now let’s see some tricks that extend these ideas to Deep neural networks.&lt;br&gt;
     
     </summary>
     
