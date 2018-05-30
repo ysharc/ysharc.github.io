@@ -3,6 +3,31 @@
   
     
     <entry>
+      <title>Loss function and Cross Entropy</title>
+      <link href="/loss-function-and-cross-entropy/"/>
+      <url>/loss-function-and-cross-entropy/</url>
+      <content type="html"><![CDATA[<p>In the <a href="/cost-function-and-gradient-descent">gradient descent post</a>, you’ve seen what an error function is. What the characteristics of a good loss function are. Let’s take a deep dive into how we achieve this.<br><a id="more"></a><br>The desired characteristics of a good loss function are</p><ul><li>Continuous and Differentiable.</li><li>Penalizes wrong classification heavily and correct classifications weakly.</li></ul><h2 id="Prediction-as-a-probability"><a href="#Prediction-as-a-probability" class="headerlink" title="Prediction as a probability"></a>Prediction as a probability</h2><p>So in the <a href="/neuron-and-the-perceptron-algorithm/">perceptron post</a> we’ve used Heaviside step function to decide whether the output was 0 or 1. But our ideal loss function demands a continuous and differentiable function. Thus we can hack our loss function in such a way that it gives the probability that the given input belongs to a class. For example if there are two classes $A$ and $B$. After the hack we expect a result $P(A)$ from our error function. The probability of our input being $B$ can be easily calculated with $P(B) = 1 - P(A)$.</p><p>All we have to do to achieve this is change the activation function. In the <a href="/multilayer-perceptrons-and-activation-function/">activation post</a> we’ve seen the three most common activation functions - $ReLU$, $sigmoid$ and $tanh$. $ReLU$ is only piece-wise continuous. For this reason it is avoided as the activation function of the final output. $tanh$ produces outputs in the range of $(-1, 1)$. But we want the output to be in the range of $[0, 1]$ for representing the probability. $sigmoid$ does the job here. It is a good choice producing outputs in the range of $(0, 1)$.</p><p>$$sigmoid(x) = \frac{1}{1+e^{-x}}$$<br><img src="https://www.dropbox.com/s/wacrmulmj3b090i/sigmoid.png?raw=1" alt="Sigmoid function graph"></p><h2 id="Finding-the-ideal-function"><a href="#Finding-the-ideal-function" class="headerlink" title="Finding the ideal function"></a>Finding the ideal function</h2><p>We now have a neural network that produces a probability $p$. Our error can take advantage of this fact. Now the only thing left is the penalty part. For a point labeled 1, we need our error function to be</p><ul><li>high when it’s output is closer to 0 (since we have a low probability that the point is 1)</li><li>low when it’s output is closer to 1. (zero when we’re absolutely confident i.e probability is 1.)</li></ul><p>You can explore functions that have this characteristic. One of the most used function for this purpose is $-ln(p)$. See the response of $-ln(p)$ below.</p><p><img src="https://www.dropbox.com/s/mzsndm5pgell6uq/log-loss.png?raw=1" alt="log-loss or cross entropy"></p><h2 id="Cross-Entropy"><a href="#Cross-Entropy" class="headerlink" title="Cross Entropy"></a>Cross Entropy</h2><p>It’s time to design ourselves an error function that would work for both the labels $0$ and $1$. If $-ln(p)$ gives us the penalty for classifying label $1$, $-ln(1-p)$ is the penalty for classifying label $0$. Since $1-p$ is the probability of the point being 0. Now all we have to do is take the penalty for 1 when the true label is $1$ and the penalty for 0 when the label is $0$. We can do so easily by the following formula</p><p>$$<br>\text{when y is the true label and p is the probability that the label is 1} \\<br>-y.ln(p) - (1-y).ln(1-p) =<br>\begin{cases}<br>-ln(1-p) &amp; {\text{if y=0}} \\<br>-ln(p) &amp; {\text{if y=1}}<br>\end{cases}\\<br>$$</p><p>$-y.ln(p) - (1-y).ln(1-p)$ is known as <strong>cross-entropy</strong>.</p><h2 id="Multi-class-Classification"><a href="#Multi-class-Classification" class="headerlink" title="Multi-class Classification"></a>Multi-class Classification</h2><p>Till now we’ve seen the problems where there only two outcomes i.e binary classification. Now let’s see a problem with more than two labels. Assume we are given four temperatures taken at 12PM, 6PM, 12AM, 6AM of a particular city. Our task is to classify the given temperatures into spring, summer, autumn or winter. So, we need to have four outputs here. Each corresponding to a season. In binary classification, our labels were straight forward, either $0$ or $1$. But how are labels for a multi-class problems set? We prefer not to set the labels to $0, 1, 2, 3$. We’ll discuss why this is the case in another post. But for now let’s see a popular way of setting labels for multi-class problems.</p><h3 id="One-hot-encoding"><a href="#One-hot-encoding" class="headerlink" title="One-hot encoding"></a>One-hot encoding</h3><p>We create an array of size $n$, where $n$ is the number of classes. Then we designate each of the classes a position in the array. For a label that needs to specify a class, the position corresponding to the class is filled with $1$ and rest all with $0$. Let’s see this in a concrete example. For the season problem above, one way to set labels is as follows<br>$$<br>label_{\text{spring}} = \begin{pmatrix}<br>1 \\<br>0 \\<br>0 \\<br>0<br>\end{pmatrix}, label_{\text{summer}} = \begin{pmatrix}<br>0 \\<br>1 \\<br>0 \\<br>0<br>\end{pmatrix}, label_{\text{autumn}} = \begin{pmatrix}<br>0 \\<br>0 \\<br>1 \\<br>0<br>\end{pmatrix}, label_{\text{winter}} = \begin{pmatrix}<br>0 \\<br>0 \\<br>0 \\<br>1<br>\end{pmatrix}<br>$$</p><p>This is known as <strong>One-hot encoding</strong>.</p><h2 id="Multi-class-Cross-Entropy"><a href="#Multi-class-Cross-Entropy" class="headerlink" title="Multi-class Cross Entropy"></a>Multi-class Cross Entropy</h2><p>We also need to change <em>cross entropy</em> to adapt to the multi-class problem. Before we do that, we need to change the output of our neural network accordingly. In binary classification the output was a probability of the label belonging to a class. Here we need multiple outputs producing the probability of each class.</p><h3 id="Softmax"><a href="#Softmax" class="headerlink" title="Softmax"></a>Softmax</h3><p>We used sigmoid function for a binary classifier to convert the output to a probability. We use a similar trick in the multi-class problem. The idea is to normalize each of the output with the sum of the outputs. In order to that we need all the outputs to be positive, as probability cannot be negative. So, we change each output $y_i$ to $e^{y_i}$. Now, we can normalize and get the probability of each output. This procedure is known as <strong>softmax</strong>. Let’s see a concrete example from the season problem defined above</p><p>$$\hat{Y} = \begin{pmatrix}<br>\hat{y_1} \\<br>\hat{y_2} \\<br>\hat{y_3} \\<br>\hat{y_4}<br>\end{pmatrix}<br>\begin{matrix}<br>\rightarrow \text{ this corresponds to spring} \\<br>\rightarrow \text{ this corresponds to summer} \\<br>\rightarrow \text{ this corresponds to autumn} \\<br>\rightarrow \text{ this corresponds to winter}<br>\end{matrix} \\<br>softmax(\hat{Y}) = \begin{pmatrix}<br>\dfrac{e^{\hat{y_1}}}{e^{\hat{y_1}}+e^{\hat{y_2}}+e^{\hat{y_3}}+e^{\hat{y_4}}} \\<br>\dfrac{e^{\hat{y_2}}}{e^{\hat{y_1}}+e^{\hat{y_2}}+e^{\hat{y_3}}+e^{\hat{y_4}}} \\<br>\dfrac{e^{\hat{y_3}}}{e^{\hat{y_1}}+e^{\hat{y_2}}+e^{\hat{y_3}}+e^{\hat{y_4}}} \\<br>\dfrac{e^{\hat{y_4}}}{e^{\hat{y_1}}+e^{\hat{y_2}}+e^{\hat{y_3}}+e^{\hat{y_4}}}<br>\end{pmatrix}<br>\begin{matrix}<br>\dfrac{\rightarrow \text{ probability of output being spring}}{} \\<br>\dfrac{\rightarrow \text{ probability of output being summer}}{} \\<br>\dfrac{\rightarrow \text{ probability of output being autumn}}{} \\<br>\dfrac{\rightarrow \text{ probability of output being winter}}{}<br>\end{matrix}<br>$$</p><p>With this, we’ve all the necessary elements for training and testing neural networks. From the next post, we’ll look at common problems and their respective solutions. Don’t forget your comic.</p><p><img src="https://imgs.xkcd.com/comics/wisdom_of_the_ancients.png" alt="XKCD Wisdom of the ancients"></p>]]></content>
+      
+      <categories>
+          
+          <category> AI </category>
+          
+          <category> Deep Learning Fundamentals </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Deep Learning </tag>
+            
+            <tag> Neural Networks </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>Forward and Backward Propagation</title>
       <link href="/forward-and-backward-propagation/"/>
       <url>/forward-and-backward-propagation/</url>
@@ -106,16 +131,16 @@
   
     
     <entry>
-      <title>Hello World</title>
-      <link href="/about/index.html"/>
-      <url>/about/index.html</url>
+      <title>Categories</title>
+      <link href="/categories/index.html"/>
+      <url>/categories/index.html</url>
       <content type="html"><![CDATA[]]></content>
     </entry>
     
     <entry>
-      <title>Categories</title>
-      <link href="/categories/index.html"/>
-      <url>/categories/index.html</url>
+      <title>Hello World</title>
+      <link href="/about/index.html"/>
+      <url>/about/index.html</url>
       <content type="html"><![CDATA[]]></content>
     </entry>
     
