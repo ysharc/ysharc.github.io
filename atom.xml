@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.allmattersai.com/"/>
-  <updated>2018-05-30T06:27:08.580Z</updated>
+  <updated>2018-06-02T14:57:15.272Z</updated>
   <id>https://blog.allmattersai.com/</id>
   
   <author>
@@ -15,6 +15,39 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Overfitting and Underfitting</title>
+    <link href="https://blog.allmattersai.com/overfitting-and-underfitting/"/>
+    <id>https://blog.allmattersai.com/overfitting-and-underfitting/</id>
+    <published>2018-06-02T00:42:04.000Z</published>
+    <updated>2018-06-02T14:57:15.272Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Just to recap what we’ve seen so far,&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;/neuron-and-the-perceptron-algorithm/&quot;&gt;Part 1: Neuron and the perceptron algorithm&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;/multilayer-perceptrons-and-activation-function/&quot;&gt;Part 2: Multilayer Perceptrons and Activation Function&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;/cost-function-and-gradient-descent/&quot;&gt;Part 3: Cost Function and Gradient Descent&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;/forward-and-backward-propagation/&quot;&gt;Part 4: Forward and Backward Propagation&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;/loss-function-and-cross-entropy/&quot;&gt;Part 5: Loss function and Cross-entropy&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+    
+    </summary>
+    
+      <category term="AI" scheme="https://blog.allmattersai.com/categories/AI/"/>
+    
+      <category term="Deep Learning Fundamentals" scheme="https://blog.allmattersai.com/categories/AI/Deep-Learning-Fundamentals/"/>
+    
+    
+      <category term="Deep Learning" scheme="https://blog.allmattersai.com/tags/Deep-Learning/"/>
+    
+      <category term="Neural Networks" scheme="https://blog.allmattersai.com/tags/Neural-Networks/"/>
+    
+      <category term="common problems" scheme="https://blog.allmattersai.com/tags/common-problems/"/>
+    
+  </entry>
   
   <entry>
     <title>Loss function and Cross Entropy</title>
@@ -49,7 +82,12 @@
     
     <summary type="html">
     
-      &lt;p&gt;Till now we’ve seen&lt;/p&gt;&lt;ul&gt;&lt;li&gt;&lt;a href=&quot;/multilayer-perceptrons-and-activation-function/&quot;&gt;How a Multilayer Perceptron works&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href=&quot;/cost-function-and-gradient-descent/&quot;&gt;How Gradient Descent helps Multilayer Perceptron&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;p&gt;Now let’s see some tricks that extend these ideas to Deep neural networks.&lt;br&gt;
+      &lt;p&gt;Till now we’ve seen&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;a href=&quot;/multilayer-perceptrons-and-activation-function/&quot;&gt;How a Multilayer Perceptron works&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href=&quot;/cost-function-and-gradient-descent/&quot;&gt;How Gradient Descent helps Multilayer Perceptron&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Now let’s see some tricks that extend these ideas to Deep neural networks.&lt;br&gt;
     
     </summary>
     
