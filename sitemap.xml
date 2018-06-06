@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.allmattersai.com/regularization/</loc>
+    
+    <lastmod>2018-06-06T05:14:01.555Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://blog.allmattersai.com/overfitting-and-underfitting/</loc>
     
     <lastmod>2018-06-04T07:37:52.210Z</lastmod>

@@ -156,15 +156,22 @@
 
 
 
-  <meta name="keywords" content="Artificial Intelligence, Deep Learning, Machine Learning, Neural Networks">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Portfolio">
-<meta property="og:url" content="https://blog.allmattersai.com/portfolio/index.html">
+  <meta name="description" content="In the last post on overfitting and underfitting. We’ve seen that to achieve a perfect classifier is a tedious task. In this post let’s see some common tricks and methods to control the generalization">
+<meta name="keywords" content="Deep Learning,Neural Networks">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Regularization">
+<meta property="og:url" content="https://blog.allmattersai.com/regularization/index.html">
 <meta property="og:site_name" content="All Matters AI">
+<meta property="og:description" content="In the last post on overfitting and underfitting. We’ve seen that to achieve a perfect classifier is a tedious task. In this post let’s see some common tricks and methods to control the generalization">
 <meta property="og:locale" content="en">
-<meta property="og:updated_time" content="2018-03-22T14:54:15.030Z">
+<meta property="og:image" content="https://lh3.googleusercontent.com/Yyz2VMAlD9QTbtyTf2oCYRHswEbAj7PTpyTrQVS1O07NKATrdObfDG_0rq_nB-J0suK2wp3JLWJJo37xJgWgzbtcgiTvFCri_OctaYM9bV4We544IfOcKyN3bjrMVrci_yTf3iibVRYO9-RcQtGF8Te9Y14oOZG7_Jhu670SUBZRhD9U3NC99G6EGMGzyutzpNI7YjdFrhntaXlgAbEDr7D0Ww7QgKItu5h-8VBtpdqkFhvNLboiEoOzmr0RpSjuhJOFHsg2AC6thHEJeZSrjZHEJk-bDrwfzkJCvVSdhVGqbabq3gmwAxB8vBrZpB_6nJNMC77ZqlKh4PIBxG1aB5vVBDCGohGbUqTfyHsPaRP-KMCrjX56xa8s9ZHA6R4dVwcDOBQubdbihFx1LF_5Akp01sFuGeMALioCMHpfOv5tKk8d300zbO1gHLTcc2U1uePhYWBNESxRtvz4_4GaoVA4DiGSg90JEsE8sZ6dizOLjnnKYfEkDTygBNdwhAVv1wO4cKzrLpCpn2MhAvJhd32J-XrpA6J42yAiZUtnyzfu3_fdLk6YGcN8yrHl6vGOlEFRXXAAdZm_IV-mmOmXuGwGbybc0OcaAtM7mQ=w1005-h710-no">
+<meta property="og:image" content="https://lh3.googleusercontent.com/zpD5G45o1eSdLmZmBUWVw4T56DTAxFtsa3peuTEJ166ckman5hHqInqSRrkmRUF1hegWdSFZbnSvr0SYZBLjKaXOA3QlQViwH49egsX4jEDkNabk9Mw0gzK92Q4aYALfNdAvgJ2-FpBB_wSutxhI2_CsgT4bnyAIQB8tSVrUOvFb0tyxuwi_Bypf8qIu8ctN551cLVL8WO0XWY4ccdnQ6hfr__Gc_txwoEykAg5-oCeSa-9_kFkigvqKER4t5IFQ9y24TGWFuMKIB1DgynZVz8JfahgfkjbGaTPvC2E2e4C80aU5t4LN__efR-rU5h5pkjYv-Zo5nVL0AEq398-YSzDImcSH5h_SE_Elhr5HEZKOkPzqxF2MI6O5XCmM5HxE-8PZeYCJoZnMB1FDL9XS1JS8FpEsbg-j2fY6zHe-2Bf_9LDB_twfQ3w2LpzSPPLqKWCo4XZ0K37uRQ2byytFxzFwOcSesfWvx4L-B8yFbuUNYXMeaA-yabLw2Z3R465F0m66mQ3TEzMdbYmLFsX4rxdWAptPOTTfscifCcyVlKhboCu3-ac0GtRqmCWHimrsI1VW6WEyYliEw_UkbiC8AlVaBlmJJg-UdVMMbw=w716-h394-no">
+<meta property="og:image" content="https://imgs.xkcd.com/comics/types.png">
+<meta property="og:updated_time" content="2018-06-06T05:14:01.555Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Portfolio">
+<meta name="twitter:title" content="Regularization">
+<meta name="twitter:description" content="In the last post on overfitting and underfitting. We’ve seen that to achieve a perfect classifier is a tedious task. In this post let’s see some common tricks and methods to control the generalization">
+<meta name="twitter:image" content="https://lh3.googleusercontent.com/Yyz2VMAlD9QTbtyTf2oCYRHswEbAj7PTpyTrQVS1O07NKATrdObfDG_0rq_nB-J0suK2wp3JLWJJo37xJgWgzbtcgiTvFCri_OctaYM9bV4We544IfOcKyN3bjrMVrci_yTf3iibVRYO9-RcQtGF8Te9Y14oOZG7_Jhu670SUBZRhD9U3NC99G6EGMGzyutzpNI7YjdFrhntaXlgAbEDr7D0Ww7QgKItu5h-8VBtpdqkFhvNLboiEoOzmr0RpSjuhJOFHsg2AC6thHEJeZSrjZHEJk-bDrwfzkJCvVSdhVGqbabq3gmwAxB8vBrZpB_6nJNMC77ZqlKh4PIBxG1aB5vVBDCGohGbUqTfyHsPaRP-KMCrjX56xa8s9ZHA6R4dVwcDOBQubdbihFx1LF_5Akp01sFuGeMALioCMHpfOv5tKk8d300zbO1gHLTcc2U1uePhYWBNESxRtvz4_4GaoVA4DiGSg90JEsE8sZ6dizOLjnnKYfEkDTygBNdwhAVv1wO4cKzrLpCpn2MhAvJhd32J-XrpA6J42yAiZUtnyzfu3_fdLk6YGcN8yrHl6vGOlEFRXXAAdZm_IV-mmOmXuGwGbybc0OcaAtM7mQ=w1005-h710-no">
 
 
 
@@ -173,7 +180,7 @@
 
 
 
-  <link rel="canonical" href="https://blog.allmattersai.com/portfolio/">
+  <link rel="canonical" href="https://blog.allmattersai.com/regularization/">
 
 
 
@@ -183,7 +190,7 @@
   };
 </script>
 
-  <title>Portfolio | All Matters AI</title>
+  <title>Regularization | All Matters AI</title>
   
 
 
@@ -3642,71 +3649,301 @@ ul.breadcrumb li+li:last-child {
           
             
 
-    
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-      
-      
-    
-    
-
-  
-
-
           
           <div id="content" class="content">
             
 
   <div id="posts" class="posts-expand">
     
+
+  
+
+  
+  
+  
+
+  
+    <div class="reading-progress-bar"></div>
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://blog.allmattersai.com/regularization/">
+
+    <span hidden="" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Yeshwanth Arcot">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden="" itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="All Matters AI">
+    </span>
+
     
-    
-    <div class="post-block page">
       <header class="post-header">
 
-<h2 class="post-title" itemprop="name headline">Portfolio</h2>
-
-<div class="post-meta">
-  
-  
-
-
-
-</div>
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
         
         
+          <h2 class="post-title" itemprop="name headline">Regularization</h2>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-06-06T06:12:04+05:30">2018-06-06</time>
+            
+
+            
+            
+              
+            
+
+            
+          </span>
+
           
-        
-      </div>
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/AI/" itemprop="url" rel="index"><span itemprop="name">AI</span></a></span>
+
+                
+                
+                  , 
+                
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing"><a href="/categories/AI/Deep-Learning-Fundamentals/" itemprop="url" rel="index"><span itemprop="name">Deep Learning Fundamentals</span></a></span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/regularization/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="regularization/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-symbolscount">
+              
+
+              
+
+              
+
+              
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-clock-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">Reading time≈</span>
+                
+                <span title="Reading time">0:05</span>
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
       
       
+
+      
+        <p>In the last <a href="/overfitting-and-underfitting/">post</a> on overfitting and underfitting. We’ve seen that to achieve a perfect classifier is a tedious task. In this post let’s see some common tricks and methods to control the generalization of a network.<br><a id="more"></a></p>
+<h2 id="The-cost-function-curve"><a href="#The-cost-function-curve" class="headerlink" title="The cost function curve"></a>The cost function curve</h2><p>In general, the overall trend of the training and testing errors is as shown below.</p>
+<p><img src="https://lh3.googleusercontent.com/Yyz2VMAlD9QTbtyTf2oCYRHswEbAj7PTpyTrQVS1O07NKATrdObfDG_0rq_nB-J0suK2wp3JLWJJo37xJgWgzbtcgiTvFCri_OctaYM9bV4We544IfOcKyN3bjrMVrci_yTf3iibVRYO9-RcQtGF8Te9Y14oOZG7_Jhu670SUBZRhD9U3NC99G6EGMGzyutzpNI7YjdFrhntaXlgAbEDr7D0Ww7QgKItu5h-8VBtpdqkFhvNLboiEoOzmr0RpSjuhJOFHsg2AC6thHEJeZSrjZHEJk-bDrwfzkJCvVSdhVGqbabq3gmwAxB8vBrZpB_6nJNMC77ZqlKh4PIBxG1aB5vVBDCGohGbUqTfyHsPaRP-KMCrjX56xa8s9ZHA6R4dVwcDOBQubdbihFx1LF_5Akp01sFuGeMALioCMHpfOv5tKk8d300zbO1gHLTcc2U1uePhYWBNESxRtvz4_4GaoVA4DiGSg90JEsE8sZ6dizOLjnnKYfEkDTygBNdwhAVv1wO4cKzrLpCpn2MhAvJhd32J-XrpA6J42yAiZUtnyzfu3_fdLk6YGcN8yrHl6vGOlEFRXXAAdZm_IV-mmOmXuGwGbybc0OcaAtM7mQ=w1005-h710-no" alt="training and testing error curve"></p>
+<p>This graph makes sense intuitively,</p>
+<ul>
+<li>In the early stages of training, the network is still trying to fit the training set. While doing this, it’s also gaining some generalization experience. This is reflected by the decrease in the test error. This is the region where the network is under-fit. It still has a lot to learn.</li>
+<li>After a while, you achieve a good generalization. Both of your test and training errors hit a low point, which is good. This means that this is a very good generalization that you can achieve with the current network.</li>
+<li>If we continue the training process, your network is going to over-fit to the training set. This is reflected by a steady increase in the generalization gap.</li>
+</ul>
+<h2 id="Early-Stopping"><a href="#Early-Stopping" class="headerlink" title="Early Stopping"></a>Early Stopping</h2><p>Observe the training and testing errors. You can see that the network enters the over-fitting region when the test error starts to rise. That’s when you know you’re losing the generalization capability of your network. So, your basic instinct will be to stop the training process as soon as the testing error starts to rise. This is known as <strong>Early Stopping</strong>.</p>
+<p>In practice, it’s best not to stop the training immediately after the rise in testing error. There will be many fluctuations, but you can see the trend. So, it’s best to leave some headroom before you stop training.</p>
+<h2 id="Dropout"><a href="#Dropout" class="headerlink" title="Dropout"></a>Dropout</h2><p>You know that the derivative received by each of the weights tells it by how much it should change for the final loss function to decrease. Notice that this is not an isolated operation. The calculation of these gradients happens in a way that it depends on many other neurons. So, a neuron may not only be just correcting for its own mistakes, but also for other neuron’s mistakes. This is a desired feature that gives rise to complex co-adaptions between the neurons. But it also contributes to over-fitting.</p>
+<p>To avoid this to a certain extent, we can randomly choose some neurons in a hidden layer and shut them off. This is the idea of <strong>Dropout</strong>. So, we update our weights in such a way that some of these neurons never existed. The figure from the <a href="http://jmlr.org/papers/volume15/srivastava14a.old/srivastava14a.pdf" target="_blank" rel="noopener">original dropout paper</a> illustrates this well.</p>
+<p><img src="https://lh3.googleusercontent.com/zpD5G45o1eSdLmZmBUWVw4T56DTAxFtsa3peuTEJ166ckman5hHqInqSRrkmRUF1hegWdSFZbnSvr0SYZBLjKaXOA3QlQViwH49egsX4jEDkNabk9Mw0gzK92Q4aYALfNdAvgJ2-FpBB_wSutxhI2_CsgT4bnyAIQB8tSVrUOvFb0tyxuwi_Bypf8qIu8ctN551cLVL8WO0XWY4ccdnQ6hfr__Gc_txwoEykAg5-oCeSa-9_kFkigvqKER4t5IFQ9y24TGWFuMKIB1DgynZVz8JfahgfkjbGaTPvC2E2e4C80aU5t4LN__efR-rU5h5pkjYv-Zo5nVL0AEq398-YSzDImcSH5h_SE_Elhr5HEZKOkPzqxF2MI6O5XCmM5HxE-8PZeYCJoZnMB1FDL9XS1JS8FpEsbg-j2fY6zHe-2Bf_9LDB_twfQ3w2LpzSPPLqKWCo4XZ0K37uRQ2byytFxzFwOcSesfWvx4L-B8yFbuUNYXMeaA-yabLw2Z3R465F0m66mQ3TEzMdbYmLFsX4rxdWAptPOTTfscifCcyVlKhboCu3-ac0GtRqmCWHimrsI1VW6WEyYliEw_UkbiC8AlVaBlmJJg-UdVMMbw=w716-h394-no" alt="Insert dropout illustration"></p>
+<p>Notice that the dropout is applied only during training. It would make no sense to apply dropout during testing. You might as well test with a new neural network that reflects the old one after dropout. Each of the neurons is dropped-off with a probability that can be set by you. This is called the <strong>dropout rate</strong>. Selecting a good dropout strategy is for another post.</p>
+<h2 id="L1-and-L2-Regularization"><a href="#L1-and-L2-Regularization" class="headerlink" title="L1 and L2 Regularization"></a>L1 and L2 Regularization</h2><p>Another prominent problem with the neural network training is the imbalance between weights. Some weights get too huge and undermine the effects of others. This contributes to overfitting. So the idea is to penalize these weights and keep them under control. Intuitively, we penalize them by adding a function of weights to our final loss. So, our new loss function will look something like</p>
+<p>$$L = \text{cross entropy} + \lambda f(W)$$</p>
+<p>Here $\lambda$ controls by how much we penalize the weights. If you choose a lambda that’s too high, then your model will underfit. The choice of $f(W)$ can be approached in two ways</p>
+<ul>
+<li>$f(W) = \sum_{j=0}^{L}|W_j|$ - This is known as <strong>L1 Regularization</strong> AKA <strong>Lasso Regression</strong>. While using this, we generally end up with sparse vectors. All the small weights tend to go to zero. This is good for feature selection, which we’ll discuss in a later post.</li>
+<li>$f(W) = \sum_{j=0}^{L}W_{j}^{2}$ - This is known as <strong>L2 Regularization</strong> AKA <strong>Ridge Regression</strong>. This type of regression tries to maintain the weights homogeneously. Meaning all the weights are balanced well. This is normally better for training models.</li>
+</ul>
+<p>Let’s see a concrete example to see what maintaining the weights homogeneously means. With two sets of weights, $(1, 0)$ and $(0.5, 0.5)$ the error calculated by L1 and L2 are as follows</p>
+<ul>
+<li>L1 calculates the errors as follows $f((1, 0)) = |1| + |0| = 1$ and $f((0.5, 0.5)) = |0.5| + |0.5| = 1$</li>
+<li>L2 calculates the errors as follows $f((1, 0)) = 1^2 + 0^2 = 1$ and $f((0.5, 0.5)) = (0.5)^2 + (0.5)^2 = 0.5$</li>
+</ul>
+<p>While L1 has no preference over any, L2 tries to balance the weights and chooses the one with lower error i.e $(0.5, 0.5)$</p>
+<h2 id="How-do-we-deal-with-under-fitting"><a href="#How-do-we-deal-with-under-fitting" class="headerlink" title="How do we deal with under-fitting"></a>How do we deal with under-fitting</h2><p>Till now we’ve only seen methods for controlling over-fitting. The trivial solution for under-fitting is to increase your model complexity. You can do this by increasing the number of hidden layers, the number of units in each of these layers, choice of activation functions etc.,</p>
+<p>Relax a bit with the post comic.<br><img src="https://imgs.xkcd.com/comics/types.png" alt="xkcd comic"></p>
+
       
     </div>
+
     
+      
+
+  <div class="popular-posts-header">Related Posts</div>
+  <ul class="popular-posts">
+  
+    <li class="popular-posts-item">
+      
+      
+      <div class="popular-posts-title"><a href="/cost-function-and-gradient-descent/" rel="bookmark">Cost Function and Gradient Descent</a></div>
+      
+    </li>
+  
+    <li class="popular-posts-item">
+      
+      
+      <div class="popular-posts-title"><a href="/forward-and-backward-propagation/" rel="bookmark">Forward and Backward Propagation</a></div>
+      
+    </li>
+  
+    <li class="popular-posts-item">
+      
+      
+      <div class="popular-posts-title"><a href="/loss-function-and-cross-entropy/" rel="bookmark">Loss function and Cross Entropy</a></div>
+      
+    </li>
+  
+    <li class="popular-posts-item">
+      
+      
+      <div class="popular-posts-title"><a href="/overfitting-and-underfitting/" rel="bookmark">Overfitting and Underfitting</a></div>
+      
+    </li>
+  
+    <li class="popular-posts-item">
+      
+      
+      <div class="popular-posts-title"><a href="/neuron-and-the-perceptron-algorithm/" rel="bookmark">Neuron and the Perceptron Algorithm</a></div>
+      
+    </li>
+  
+  </ul>
+
+
+    
+
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/Deep-Learning/" rel="tag"># Deep Learning</a>
+          
+            <a href="/tags/Neural-Networks/" rel="tag"># Neural Networks</a>
+          
+        </div>
+      
+
+      
+      
+        <div class="post-widgets">
+        
+
+        
+
+        
+          
+          <div id="needsharebutton-postbottom">
+            <span class="btn">
+              <i class="fa fa-share-alt" aria-hidden="true"></i>
+            </span>
+          </div>
+        
+        </div>
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/overfitting-and-underfitting/" rel="next" title="Overfitting and Underfitting">
+                <i class="fa fa-chevron-left"></i> Overfitting and Underfitting
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
 
 
 
-    
-    
-    
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
@@ -3746,8 +3983,17 @@ ul.breadcrumb li+li:last-child {
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -3801,6 +4047,22 @@ ul.breadcrumb li+li:last-child {
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#The-cost-function-curve"><span class="nav-number">1.</span> <span class="nav-text">The cost function curve</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Early-Stopping"><span class="nav-number">2.</span> <span class="nav-text">Early Stopping</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Dropout"><span class="nav-number">3.</span> <span class="nav-text">Dropout</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#L1-and-L2-Regularization"><span class="nav-number">4.</span> <span class="nav-text">L1 and L2 Regularization</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#How-do-we-deal-with-under-fitting"><span class="nav-number">5.</span> <span class="nav-text">How do we deal with under-fitting</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -4030,6 +4292,14 @@ ul.breadcrumb li+li:last-child {
   
 
   
+    
+      
+
+
+<script type="text/javascript" src="//cdn.jsdelivr.net/npm/mathjax@2.7.4/MathJax.js?config=TeX-AMS-MML_SVG-full"></script>
+
+    
+  
 
 
   
@@ -4062,9 +4332,9 @@ ul.breadcrumb li+li:last-child {
 <script type="text/javascript" src="/bundle.js"></script><script type="text/javascript">if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
     window.Promise = null;
   };var disqus_config = function () {
-        this.page.url = 'https://blog.allmattersai.com/portfolio/index.html';
-        this.page.identifier = 'portfolio/index.html';
-        this.page.title = 'Portfolio';
+        this.page.url = 'https://blog.allmattersai.com/regularization/';
+        this.page.identifier = 'regularization/';
+        this.page.title = 'Regularization';
       };
       function loadComments () {
         var d = document, s = d.createElement('script');
@@ -4403,6 +4673,17 @@ ul.breadcrumb li+li:last-child {
       if (shouldDismissSearchPopup) {
         onPopupClose();
       }
+    });;MathJax.Hub.Config({
+      tex2jax: {
+        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+        processEscapes: true,
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });;MathJax.Hub.Queue(function() {
+      var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
     });;pbOptions = {};
       
           pbOptions.iconStyle = "box";

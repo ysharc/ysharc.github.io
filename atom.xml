@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.allmattersai.com/"/>
-  <updated>2018-06-04T07:37:52.210Z</updated>
+  <updated>2018-06-06T05:14:01.555Z</updated>
   <id>https://blog.allmattersai.com/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Regularization</title>
+    <link href="https://blog.allmattersai.com/regularization/"/>
+    <id>https://blog.allmattersai.com/regularization/</id>
+    <published>2018-06-06T00:42:04.000Z</published>
+    <updated>2018-06-06T05:14:01.555Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;In the last &lt;a href=&quot;/overfitting-and-underfitting/&quot;&gt;post&lt;/a&gt; on overfitting and underfitting. We’ve seen that to achieve a perfect classifier is a tedious task. In this post let’s see some common tricks and methods to control the generalization of a network.&lt;br&gt;
+    
+    </summary>
+    
+      <category term="AI" scheme="https://blog.allmattersai.com/categories/AI/"/>
+    
+      <category term="Deep Learning Fundamentals" scheme="https://blog.allmattersai.com/categories/AI/Deep-Learning-Fundamentals/"/>
+    
+    
+      <category term="Deep Learning" scheme="https://blog.allmattersai.com/tags/Deep-Learning/"/>
+    
+      <category term="Neural Networks" scheme="https://blog.allmattersai.com/tags/Neural-Networks/"/>
+    
+  </entry>
   
   <entry>
     <title>Overfitting and Underfitting</title>
