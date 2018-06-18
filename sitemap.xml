@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.allmattersai.com/momentum/</loc>
+    
+    <lastmod>2018-06-18T14:00:59.162Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://blog.allmattersai.com/optimizing-gradient-descent/</loc>
     
-    <lastmod>2018-06-12T13:48:23.632Z</lastmod>
+    <lastmod>2018-06-14T11:22:00.737Z</lastmod>
     
   </url>
   

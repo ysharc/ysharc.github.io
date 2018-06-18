@@ -3,6 +3,31 @@
   
     
     <entry>
+      <title>Momentum</title>
+      <link href="/momentum/"/>
+      <url>/momentum/</url>
+      <content type="html"><![CDATA[<p>Gradient Descent promises us to take a step closer to a minima (local or global) on each iteration. But due to the high dimensionality, it’s dealing with a very complicated error surface. This introduces a problem of very slow convergence towards the minima. Let’s see a simple yet effective technique to overcome this problem.<br><a id="more"></a></p><h2 id="The-problem-with-Gradient-Descent"><a href="#The-problem-with-Gradient-Descent" class="headerlink" title="The problem with Gradient Descent"></a>The problem with Gradient Descent</h2><p>Updates of gradient descent around ravines are similar to the ones shown in the figure below.<br><img src="https://lh3.googleusercontent.com/tMSmvzo6VXoBnLFAxcFJEKKT5B9Nk7hIACXZ-zV1kP6vr9plWmBcWTaZjmCY2W4_p_jSscWqmqADHVBG9df3jULZrhRFEo3NHIIJN23PmDSzAMEkffe2Fi5tozz0TDyP9IJqXgN3OZulGRwlNol3m8UBIrRQ_I96WSKiriibjHoTzHHz_khuSerQNaxDPDlI8pZA_JIgopDPhkZCMfKBCmHLIyc0P2enG77_N7tVo0Rp6BirOlLbiWC8706DLddBpoxSs2JHwvzN59jZNFTqcbm0RXloVA6-4-UU-RRFI-YiBJ20jOci0StMztPQBWgKpWibmTZNzyXHm9HeEHxNwHS12GcTNr-VGEYRLv6o1bgKv-wIetIoWdfYwWvbe997lkPIz6cxyGQaiCiktdLaqIr2jbqX82HyfByVNSO0tdtwFcMyi5ajcyuW-Kw9kW1-CcRwAvTI7LTq_XTUZJUFGOUPMu-fuy_ZdkbeQ3ZmW0TYvSDzEOATtJkcf7Xwi3hDtYnRyhIy2RoHvaAE2sPAHlIWvWVCkYOGfmHgYCFM7ScoD52XRwDikvLoOYQuc6wXeB6_qJ-vey3LUTVSf6OPZt2Xu_2YEVmS_e-o1Wo=w1005-h710-no" alt="Gradient-descent updates around ravines"></p><p>The error oscillates so much in an unwanted direction and makes little progress towards the minima. So to overcome these problems, all we’ve to do is decrease the motion in the unwanted direction and increase the motion towards the minima.</p><h2 id="Momentum"><a href="#Momentum" class="headerlink" title="Momentum"></a>Momentum</h2><p>To do this, we can use the updates that are done so far. Think of each update as a vector. Let’s see the result of adding the previous updates and the update in the current stage.</p><p><img src="https://lh3.googleusercontent.com/DdTsCRoSLrnXAc1nvk5YedI0tWHxr9eVtuwARUfXBb1WdTnTLjZnswaUeE6GufQczTOcEA7yyaP-4FXzLHMFv_lCeA8fSNZMLDr_9JyEj2nIBzk5NrE30yHSIOc1QErj_w1dNh_FHAj2vbppbI8YOBbuKr3AmQ2vZNp6Ze0DvMlVIxTKFTG-hokRMfrSFRsJZGtOiU92i_J46eHZB3MhT9z9oU_oomi7biU82CFtrHJGcdqoaRivxs2uOJRx-CdNuVmwIcZo6o5JkT15vnZYIh3QChLSTl8AxPjKbba_PXtx29XmpOSV1pYGGXI9YkqYndJlX-_dm5qEWsR_Sqek9iFyOorTnxT2IQkHZgWM34klkb4lqRRnC6z0DfN7UlH7FkvBcmEYZIxFW0GAJ2fpLsWxBhOpAZb5DIOY7dy8rEtAOXiqcb72qRhkGPRwucjHkZncb7rHUNAQyse6ZwFU95afPpQRwzpW2Edr-fDdAaMzf28B52Dw-07Yzv5m8ajjfQwKzNQbsxxBToLeiFjqRYl_iR-jEPEjvUPyfM4Rw1YEmMzM3cAdJLmmbpc5W45_T8edzNQHg-6AjX3o_0_jzchmVJvj1JlWmrHMDv0=w1005-h710-no" alt="Result of adding the updates so far"></p><p>The resulting vector after adding the previous updates, not only shortens the oscillation but is much better directed towards the minima. This is due to the oscillations canceling out each other in the unwanted direction and adding up in the direction towards the minima. This is the idea of <strong>Momentum</strong>.</p><h2 id="Updates-of-Gradient-Descent"><a href="#Updates-of-Gradient-Descent" class="headerlink" title="Updates of Gradient Descent"></a>Updates of Gradient Descent</h2><p>To apply this idea to our gradient descent equations, we need to be storing the sum of the gradients. Let’s call this variable $V$. We now need to update our weights with $V$ rather than $\frac{\partial E}{\partial W}$. Also, we need to be updating V on every iteration to store the sum of the updates so far. So the updated equations for our gradient descent will be</p><p>$$<br>w \leftarrow w - \alpha V \\<br>V \leftarrow \beta V + (1-\beta)\frac{\partial E}{\partial W}\\<br>$$</p><p>You might be thinking where did the $\beta$ come from? If you think about it, each update vector introduces an unnecessary error in the wrong direction. So it makes sense to take a small part of our current update to minimize the error it makes and add in a large part of the previous sum which is much better in the direction towards the minima. That is what $\beta$ is doing in the equation. It takes a small part of the large error and big part of the small error. The figure below illustrates this fact.</p><p><img src="https://lh3.googleusercontent.com/Nyc2t2aotsFBQhcgPFSssjnQWPlBhjdF2Le_sZK-W1UUEWTivo1T7S5JSiYK9ykuWc8SK27DWV-Ljqv-Jza2KPnLhvOPJZx8wxqUKcq2m7-8Xm1Sjg1ueHtLh7wc6-ouV0SE3a3CCfV832KE5ne87XT8nvjAkfzb6FgewMRCnVYCIjAW2ekUDEsBjwg-0QopxSL-yAZ8ozG_uVJdov-O6FQEOQCod_cp4b6TmFPrj7Cdb00AOPjVlUbQJocYE8f6PThQdmLdK4Foq5XsetzS2Uh2PsR4i2hJGUClvcU_DYXjnfmr_x_iKxt4u4vahINk6MeilR_XPJjfOWefwmTxKoq9BNn_7AZruZV8vLUZADNaoAwyE_IzCKQZ7sSes4jJwS7djyKt0RucTRUT7K1N590jqhMuxdwlNo6vG0npydpdqmnzSPQaRjWa00IovyK48xPG1ROhiHUj9XQ72zYQGXsAQUjRVJ6oUrK-tKbw7q9K8I3pATOsofN5DuFIwYTw73X4SHaQii8-pYjPwkLfH3uIy7eqTITETEobBTP-UA6uOP-1JGgDtu2fjbqlQnhzotde-GWcIpWl1-1t3QeFmI6WVf59F6djmjp-PLI=w1005-h710-no" alt="Momentum in work"></p><h2 id="More-advanced-updates"><a href="#More-advanced-updates" class="headerlink" title="More advanced updates"></a>More advanced updates</h2><p>The momentum update we’ve seen so far is a very simple one. We’ll be looking at many other more good ones in the mini-series on adaptive learning rate algorithms. In this mini-series, we’ll cover one algorithm at a time with an intuitive way of understanding each. Till then, review all our posts so far in the Deep Learning Fundamentals. Don’t forget your comic of this post.</p><p><img src="https://imgs.xkcd.com/comics/power_cord.png" alt="XKCD Comic"></p>]]></content>
+      
+      <categories>
+          
+          <category> AI </category>
+          
+          <category> Deep Learning Fundamentals </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Deep Learning </tag>
+            
+            <tag> Neural Networks </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>Optimizing Gradient Descent</title>
       <link href="/optimizing-gradient-descent/"/>
       <url>/optimizing-gradient-descent/</url>

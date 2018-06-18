@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.allmattersai.com/"/>
-  <updated>2018-06-12T13:48:23.632Z</updated>
+  <updated>2018-06-18T14:00:59.162Z</updated>
   <id>https://blog.allmattersai.com/</id>
   
   <author>
@@ -17,11 +17,35 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Momentum</title>
+    <link href="https://blog.allmattersai.com/momentum/"/>
+    <id>https://blog.allmattersai.com/momentum/</id>
+    <published>2018-06-15T00:42:04.000Z</published>
+    <updated>2018-06-18T14:00:59.162Z</updated>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Gradient Descent promises us to take a step closer to a minima (local or global) on each iteration. But due to the high dimensionality, it’s dealing with a very complicated error surface. This introduces a problem of very slow convergence towards the minima. Let’s see a simple yet effective technique to overcome this problem.&lt;br&gt;
+    
+    </summary>
+    
+      <category term="AI" scheme="https://blog.allmattersai.com/categories/AI/"/>
+    
+      <category term="Deep Learning Fundamentals" scheme="https://blog.allmattersai.com/categories/AI/Deep-Learning-Fundamentals/"/>
+    
+    
+      <category term="Deep Learning" scheme="https://blog.allmattersai.com/tags/Deep-Learning/"/>
+    
+      <category term="Neural Networks" scheme="https://blog.allmattersai.com/tags/Neural-Networks/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Optimizing Gradient Descent</title>
     <link href="https://blog.allmattersai.com/optimizing-gradient-descent/"/>
     <id>https://blog.allmattersai.com/optimizing-gradient-descent/</id>
     <published>2018-06-12T00:42:04.000Z</published>
-    <updated>2018-06-12T13:48:23.632Z</updated>
+    <updated>2018-06-14T11:22:00.737Z</updated>
     
     <summary type="html">
     
