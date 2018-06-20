@@ -3,6 +3,33 @@
   
     
     <entry>
+      <title>Nesterov Accelerated Gradient</title>
+      <link href="/nesterov-accelerated-gradient/"/>
+      <url>/nesterov-accelerated-gradient/</url>
+      <content type="html"><![CDATA[<h2 id="Correction-Factor"><a href="#Correction-Factor" class="headerlink" title="Correction Factor"></a>Correction Factor</h2><p>While using momentum, we updated $V$ and then applied part of $V$ to the weight update. The idea of Nesterov Accelerated Gradient(NAG) is to update the current weight by a small part of $V$ and then calculate the gradient of the updated weight. The small part by which we update the current weight is called the <strong>correction factor</strong> which is $\alpha V$. Simply put, we changed the position where the gradient is calculated. So for each iteration in gradient descent, the updates would be as follows</p><p>$$<br>W \leftarrow W + \alpha V\\<br>V \leftarrow \alpha V - \epsilon \frac{\partial E}{\partial W}\\<br>W \leftarrow W + V<br>$$</p><p>Here $\alpha, \epsilon$ function the same way as $\beta$ in the standard momentum algorithm.</p><h2 id="Comparison-with-momentum"><a href="#Comparison-with-momentum" class="headerlink" title="Comparison with momentum"></a>Comparison with momentum</h2><p>The illustrations below show the difference between momentum and Nesterov Accelerated Gradient.</p><p><img src="https://lh3.googleusercontent.com/HJi5B-iOdVPwLvRf6jivUTP8KKDxqydCejwt38teS-jkrgkhmeeBJo0EOOD6-b4xqzARO8HvfaXAxTM0I-G68rJzIO5YVLYoLKn4nCngP21x_zTYLk4sKN1RZmF2NLIKOytdjyWcyPoxXaTUlpSRRbJcTYO_XRe7wzlliP8IfPRwVd_yYll7bt-J-0X6m9NgHTnXFkkbegYaZTMKF99CsKpxukweDRWlkPEsd8UYUQUygOpAgGuJ2GDVN_8HgJKIpAFGL-xDIZ40PI2LXlKHMVhIhH3RRaKihmC4pE71vZ6b9xcpfWOgM8nkt4QyUz0Lc5-70Ih_j8k_iPk-1QUKzqrQHZ7O148ERbZwKr1FtRuszxBjZC7eCFMWHlttxs13HMHuIe9WF_KDoC6KKBYsucuRO4IOZQfRDgL7iBPiI828zmr0Gfa8a00s0tDWDW1nM4sFFXhFonzr4t6uwSxEoPUgrzX-vUY4w44o6KO1E8zxs-NSnaPy-lVRpdzoHb6CnbZOmJE2StUIlEB4cSkbwGLc2o94LzUONNw9xIV3dgcpFxeKeU93uKb4nbtEUzW7Bh5FUAF1EajsQzx3SrTgCrerrhiYCRHollJfDIo=w1123-h612-no" alt="momentum illustration"></p><p><img src="https://lh3.googleusercontent.com/nd6jy-hBWI_bb3TG-TvQRXQ195xnxZdYFP8nr_bnCkFgR16v2ivxIOma8ztFjDj5XfXVLCYmF0AIri2zN0n0nnyq9kt_SuFKpknCtVlqsPgo_jTMjFy-qWSJNO6GxvzEtJ6c4sK_y6Uo9BnR-dMPGex3nbslAufu1piiC9lOcyfyFixKy8jAzsHh1aFNhPC8_YnOiEnPFJEyNbjQTww2QU79CNOnz7y_RjlGJoYNaKDhu6QSWADVwxfunfK7p9OAJpQ0Cp-3r7ga0y87kvEzajGbTRfyYS-tTUmc0PoPTRQHaXZLNBnfDSIAZlPqPnFX8rXshDUWPDVl41jjoeT72ORA1874wzwMLIzg2V4W5fRXHL2HlFdSCf2VmtPXVameRlAjNndPs8RZUVNadK5TKfQdXEqjmDaY_qr90N56vLI2tBZhShGBrPXkE1ofMvxHiiTG0XvB37u3ECpySWYB3LjXkzPSzy5y8FEG91ORIlv4FtWXWB_swpAT7O2ywZKoe9gv4JhFzo1xs0FWk88CB6yHBRNECWdVhgu5qUyHskc4lPRLz29b0da_j1enaXJo8ppjdNndfgwrkRTz_Bii7q2Gk9T1_xi8Okskzqo=w1123-h567-no" alt="Nesterov Accelerated Gradient illustration"></p><p>Though this seems like a trivial change, it usually makes the velocity change in a quicker and more responsive way. This leads to better stability(not many fluctuations) than momentum and works better with a high $\alpha$ value.</p><p>In the next post let’s see AdaGrad. Enjoy the end of the post comic.<br><img src="https://imgs.xkcd.com/comics/einstein.png" alt="XKCD Comic"></p>]]></content>
+      
+      <categories>
+          
+          <category> AI </category>
+          
+          <category> Deep Learning Fundamentals </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Deep Learning </tag>
+            
+            <tag> Neural Networks </tag>
+            
+            <tag> Momentum Mini Series </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>Momentum</title>
       <link href="/momentum/"/>
       <url>/momentum/</url>
@@ -247,6 +274,13 @@
     </entry>
     
     <entry>
+      <title>Topics</title>
+      <link href="/tags/index.html"/>
+      <url>/tags/index.html</url>
+      <content type="html"><![CDATA[]]></content>
+    </entry>
+    
+    <entry>
       <title>Portfolio</title>
       <link href="/portfolio/index.html"/>
       <url>/portfolio/index.html</url>
@@ -257,13 +291,6 @@
       <title>links</title>
       <link href="/resources/index.html"/>
       <url>/resources/index.html</url>
-      <content type="html"><![CDATA[]]></content>
-    </entry>
-    
-    <entry>
-      <title>Topics</title>
-      <link href="/tags/index.html"/>
-      <url>/tags/index.html</url>
       <content type="html"><![CDATA[]]></content>
     </entry>
     

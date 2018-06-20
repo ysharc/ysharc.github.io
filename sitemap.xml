@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.allmattersai.com/nesterov-accelerated-gradient/</loc>
+    
+    <lastmod>2018-06-20T04:33:25.523Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://blog.allmattersai.com/momentum/</loc>
     
     <lastmod>2018-06-18T14:00:59.162Z</lastmod>

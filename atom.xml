@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.allmattersai.com/"/>
-  <updated>2018-06-18T14:00:59.162Z</updated>
+  <updated>2018-06-20T04:33:25.523Z</updated>
   <id>https://blog.allmattersai.com/</id>
   
   <author>
@@ -15,6 +15,38 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Nesterov Accelerated Gradient</title>
+    <link href="https://blog.allmattersai.com/nesterov-accelerated-gradient/"/>
+    <id>https://blog.allmattersai.com/nesterov-accelerated-gradient/</id>
+    <published>2018-06-20T00:42:04.000Z</published>
+    <updated>2018-06-20T04:33:25.523Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;h2 id=&quot;Correction-Factor&quot;&gt;&lt;a href=&quot;#Correction-Factor&quot; class=&quot;headerlink&quot; title=&quot;Correction Factor&quot;&gt;&lt;/a&gt;Correction Factor&lt;/h2&gt;&lt;p&gt;While
+        
+      
+    
+    </summary>
+    
+      <category term="AI" scheme="https://blog.allmattersai.com/categories/AI/"/>
+    
+      <category term="Deep Learning Fundamentals" scheme="https://blog.allmattersai.com/categories/AI/Deep-Learning-Fundamentals/"/>
+    
+    
+      <category term="Deep Learning" scheme="https://blog.allmattersai.com/tags/Deep-Learning/"/>
+    
+      <category term="Neural Networks" scheme="https://blog.allmattersai.com/tags/Neural-Networks/"/>
+    
+      <category term="Momentum Mini Series" scheme="https://blog.allmattersai.com/tags/Momentum-Mini-Series/"/>
+    
+  </entry>
   
   <entry>
     <title>Momentum</title>
