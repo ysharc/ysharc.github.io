@@ -3,10 +3,37 @@
   
     
     <entry>
+      <title>AdaGrad</title>
+      <link href="/adagrad/"/>
+      <url>/adagrad/</url>
+      <content type="html"><![CDATA[<h2 id="Recognizing-Important-Features"><a href="#Recognizing-Important-Features" class="headerlink" title="Recognizing Important Features"></a>Recognizing Important Features</h2><p>The idea of <strong>AdaGrad</strong> is a simple one. Normalize the gradient updates by the sum of the gradients so far. Suppose we run the training for t steps then the weight update for the t+1 step is as follows<br><a id="more"></a><br>$$<br>W_i^{(t+1)} \leftarrow W_i^t - \frac{\alpha}{\sqrt{\epsilon + \sum_{\tau = 1}^{t}\frac{\partial E}{\partial W_i^{t}}}}\frac{\partial E}{\partial W_i^{t}}<br>$$</p><p>This has a very nice consequence. Weights that have high gradients frequently get a reduced update, due to the sum of all the updates so far in the denominator. Weights that have a small gradient or ones that receive infrequent updates are given more preference, due to the small sum in the denominator. $\epsilon$ is just a safeguard to prevent dividing by zero. Its value is in the order of $10^{-8}$.</p><h2 id="Potential-Drawbacks"><a href="#Potential-Drawbacks" class="headerlink" title="Potential Drawbacks"></a>Potential Drawbacks</h2><p>Adagrad helps in tuning the learning rate and provides more weight to rare features. But this comes at a cost of learning rate becoming too small due to the sum of squared gradients in the denominator. In its training cycle, Adagrad reaches a point where the updates aren’t relevant anymore and weights are stuck at a point.</p><p>Let’s see some more algorithms which try to cover this flaw in adagrad starting with “Adadelta”. Enjoy your end of the post comic.<br><img src="" alt="XKCD Comic"></p>]]></content>
+      
+      <categories>
+          
+          <category> AI </category>
+          
+          <category> Deep Learning Fundamentals </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Deep Learning </tag>
+            
+            <tag> Neural Networks </tag>
+            
+            <tag> Momentum Mini Series </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>Nesterov Accelerated Gradient</title>
       <link href="/nesterov-accelerated-gradient/"/>
       <url>/nesterov-accelerated-gradient/</url>
-      <content type="html"><![CDATA[<h2 id="Correction-Factor"><a href="#Correction-Factor" class="headerlink" title="Correction Factor"></a>Correction Factor</h2><p>While using momentum, we updated $V$ and then applied part of $V$ to the weight update. The idea of Nesterov Accelerated Gradient(NAG) is to update the current weight by a small part of $V$ and then calculate the gradient of the updated weight. The small part by which we update the current weight is called the <strong>correction factor</strong> which is $\alpha V$. Simply put, we changed the position where the gradient is calculated. So for each iteration in gradient descent, the updates would be as follows</p><p>$$<br>W \leftarrow W + \alpha V\\<br>V \leftarrow \alpha V - \epsilon \frac{\partial E}{\partial W}\\<br>W \leftarrow W + V<br>$$</p><p>Here $\alpha, \epsilon$ function the same way as $\beta$ in the standard momentum algorithm.</p><h2 id="Comparison-with-momentum"><a href="#Comparison-with-momentum" class="headerlink" title="Comparison with momentum"></a>Comparison with momentum</h2><p>The illustrations below show the difference between momentum and Nesterov Accelerated Gradient.</p><p><img src="https://lh3.googleusercontent.com/HJi5B-iOdVPwLvRf6jivUTP8KKDxqydCejwt38teS-jkrgkhmeeBJo0EOOD6-b4xqzARO8HvfaXAxTM0I-G68rJzIO5YVLYoLKn4nCngP21x_zTYLk4sKN1RZmF2NLIKOytdjyWcyPoxXaTUlpSRRbJcTYO_XRe7wzlliP8IfPRwVd_yYll7bt-J-0X6m9NgHTnXFkkbegYaZTMKF99CsKpxukweDRWlkPEsd8UYUQUygOpAgGuJ2GDVN_8HgJKIpAFGL-xDIZ40PI2LXlKHMVhIhH3RRaKihmC4pE71vZ6b9xcpfWOgM8nkt4QyUz0Lc5-70Ih_j8k_iPk-1QUKzqrQHZ7O148ERbZwKr1FtRuszxBjZC7eCFMWHlttxs13HMHuIe9WF_KDoC6KKBYsucuRO4IOZQfRDgL7iBPiI828zmr0Gfa8a00s0tDWDW1nM4sFFXhFonzr4t6uwSxEoPUgrzX-vUY4w44o6KO1E8zxs-NSnaPy-lVRpdzoHb6CnbZOmJE2StUIlEB4cSkbwGLc2o94LzUONNw9xIV3dgcpFxeKeU93uKb4nbtEUzW7Bh5FUAF1EajsQzx3SrTgCrerrhiYCRHollJfDIo=w1123-h612-no" alt="momentum illustration"></p><p><img src="https://lh3.googleusercontent.com/nd6jy-hBWI_bb3TG-TvQRXQ195xnxZdYFP8nr_bnCkFgR16v2ivxIOma8ztFjDj5XfXVLCYmF0AIri2zN0n0nnyq9kt_SuFKpknCtVlqsPgo_jTMjFy-qWSJNO6GxvzEtJ6c4sK_y6Uo9BnR-dMPGex3nbslAufu1piiC9lOcyfyFixKy8jAzsHh1aFNhPC8_YnOiEnPFJEyNbjQTww2QU79CNOnz7y_RjlGJoYNaKDhu6QSWADVwxfunfK7p9OAJpQ0Cp-3r7ga0y87kvEzajGbTRfyYS-tTUmc0PoPTRQHaXZLNBnfDSIAZlPqPnFX8rXshDUWPDVl41jjoeT72ORA1874wzwMLIzg2V4W5fRXHL2HlFdSCf2VmtPXVameRlAjNndPs8RZUVNadK5TKfQdXEqjmDaY_qr90N56vLI2tBZhShGBrPXkE1ofMvxHiiTG0XvB37u3ECpySWYB3LjXkzPSzy5y8FEG91ORIlv4FtWXWB_swpAT7O2ywZKoe9gv4JhFzo1xs0FWk88CB6yHBRNECWdVhgu5qUyHskc4lPRLz29b0da_j1enaXJo8ppjdNndfgwrkRTz_Bii7q2Gk9T1_xi8Okskzqo=w1123-h567-no" alt="Nesterov Accelerated Gradient illustration"></p><p>Though this seems like a trivial change, it usually makes the velocity change in a quicker and more responsive way. This leads to better stability(not many fluctuations) than momentum and works better with a high $\alpha$ value.</p><p>In the next post let’s see AdaGrad. Enjoy the end of the post comic.<br><img src="https://imgs.xkcd.com/comics/einstein.png" alt="XKCD Comic"></p>]]></content>
+      <content type="html"><![CDATA[<h2 id="Correction-Factor"><a href="#Correction-Factor" class="headerlink" title="Correction Factor"></a>Correction Factor</h2><p>While using momentum, we updated $V$ and then applied part of $V$ to the weight update. The idea of Nesterov Accelerated Gradient(NAG) is to update the current weight by a small part of $V$ and then calculate the gradient of the updated weight. The small part by which we update the current weight is called the <strong>correction factor</strong> which is $\alpha V$. Simply put, we changed the position where the gradient is calculated. So for each iteration in gradient descent, the updates would be as follows<br><a id="more"></a><br>$$<br>W \leftarrow W + \alpha V\\<br>V \leftarrow \alpha V - \epsilon \frac{\partial E}{\partial W}\\<br>W \leftarrow W + V<br>$$</p><p>Here $\alpha, \epsilon$ function the same way as $\beta$ in the standard momentum algorithm.</p><h2 id="Comparison-with-momentum"><a href="#Comparison-with-momentum" class="headerlink" title="Comparison with momentum"></a>Comparison with momentum</h2><p>The illustrations below show the difference between momentum and Nesterov Accelerated Gradient.</p><p><img src="https://lh3.googleusercontent.com/HJi5B-iOdVPwLvRf6jivUTP8KKDxqydCejwt38teS-jkrgkhmeeBJo0EOOD6-b4xqzARO8HvfaXAxTM0I-G68rJzIO5YVLYoLKn4nCngP21x_zTYLk4sKN1RZmF2NLIKOytdjyWcyPoxXaTUlpSRRbJcTYO_XRe7wzlliP8IfPRwVd_yYll7bt-J-0X6m9NgHTnXFkkbegYaZTMKF99CsKpxukweDRWlkPEsd8UYUQUygOpAgGuJ2GDVN_8HgJKIpAFGL-xDIZ40PI2LXlKHMVhIhH3RRaKihmC4pE71vZ6b9xcpfWOgM8nkt4QyUz0Lc5-70Ih_j8k_iPk-1QUKzqrQHZ7O148ERbZwKr1FtRuszxBjZC7eCFMWHlttxs13HMHuIe9WF_KDoC6KKBYsucuRO4IOZQfRDgL7iBPiI828zmr0Gfa8a00s0tDWDW1nM4sFFXhFonzr4t6uwSxEoPUgrzX-vUY4w44o6KO1E8zxs-NSnaPy-lVRpdzoHb6CnbZOmJE2StUIlEB4cSkbwGLc2o94LzUONNw9xIV3dgcpFxeKeU93uKb4nbtEUzW7Bh5FUAF1EajsQzx3SrTgCrerrhiYCRHollJfDIo=w1123-h612-no" alt="momentum illustration"></p><p><img src="https://lh3.googleusercontent.com/nd6jy-hBWI_bb3TG-TvQRXQ195xnxZdYFP8nr_bnCkFgR16v2ivxIOma8ztFjDj5XfXVLCYmF0AIri2zN0n0nnyq9kt_SuFKpknCtVlqsPgo_jTMjFy-qWSJNO6GxvzEtJ6c4sK_y6Uo9BnR-dMPGex3nbslAufu1piiC9lOcyfyFixKy8jAzsHh1aFNhPC8_YnOiEnPFJEyNbjQTww2QU79CNOnz7y_RjlGJoYNaKDhu6QSWADVwxfunfK7p9OAJpQ0Cp-3r7ga0y87kvEzajGbTRfyYS-tTUmc0PoPTRQHaXZLNBnfDSIAZlPqPnFX8rXshDUWPDVl41jjoeT72ORA1874wzwMLIzg2V4W5fRXHL2HlFdSCf2VmtPXVameRlAjNndPs8RZUVNadK5TKfQdXEqjmDaY_qr90N56vLI2tBZhShGBrPXkE1ofMvxHiiTG0XvB37u3ECpySWYB3LjXkzPSzy5y8FEG91ORIlv4FtWXWB_swpAT7O2ywZKoe9gv4JhFzo1xs0FWk88CB6yHBRNECWdVhgu5qUyHskc4lPRLz29b0da_j1enaXJo8ppjdNndfgwrkRTz_Bii7q2Gk9T1_xi8Okskzqo=w1123-h567-no" alt="Nesterov Accelerated Gradient illustration"></p><p>Though this seems like a trivial change, it usually makes the velocity change in a quicker and more responsive way. This leads to better stability(not many fluctuations) than momentum and works better with a high $\alpha$ value.</p><p>In the next post let’s see AdaGrad. Enjoy the end of the post comic.<br><img src="https://imgs.xkcd.com/comics/einstein.png" alt="XKCD Comic"></p>]]></content>
       
       <categories>
           
@@ -260,13 +287,6 @@
   
     
     <entry>
-      <title>Hello World</title>
-      <link href="/about/index.html"/>
-      <url>/about/index.html</url>
-      <content type="html"><![CDATA[]]></content>
-    </entry>
-    
-    <entry>
       <title>Categories</title>
       <link href="/categories/index.html"/>
       <url>/categories/index.html</url>
@@ -274,9 +294,9 @@
     </entry>
     
     <entry>
-      <title>Topics</title>
-      <link href="/tags/index.html"/>
-      <url>/tags/index.html</url>
+      <title>Hello World</title>
+      <link href="/about/index.html"/>
+      <url>/about/index.html</url>
       <content type="html"><![CDATA[]]></content>
     </entry>
     
@@ -291,6 +311,13 @@
       <title>links</title>
       <link href="/resources/index.html"/>
       <url>/resources/index.html</url>
+      <content type="html"><![CDATA[]]></content>
+    </entry>
+    
+    <entry>
+      <title>Topics</title>
+      <link href="/tags/index.html"/>
+      <url>/tags/index.html</url>
       <content type="html"><![CDATA[]]></content>
     </entry>
     

@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.allmattersai.com/"/>
-  <updated>2018-06-20T04:33:25.523Z</updated>
+  <updated>2018-06-22T05:59:00.879Z</updated>
   <id>https://blog.allmattersai.com/</id>
   
   <author>
@@ -17,21 +17,41 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>AdaGrad</title>
+    <link href="https://blog.allmattersai.com/adagrad/"/>
+    <id>https://blog.allmattersai.com/adagrad/</id>
+    <published>2018-06-22T00:42:04.000Z</published>
+    <updated>2018-06-22T05:59:00.879Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;Recognizing-Important-Features&quot;&gt;&lt;a href=&quot;#Recognizing-Important-Features&quot; class=&quot;headerlink&quot; title=&quot;Recognizing Important Features&quot;&gt;&lt;/a&gt;Recognizing Important Features&lt;/h2&gt;&lt;p&gt;The idea of &lt;strong&gt;AdaGrad&lt;/strong&gt; is a simple one. Normalize the gradient updates by the sum of the gradients so far. Suppose we run the training for t steps then the weight update for the t+1 step is as follows&lt;br&gt;
+    
+    </summary>
+    
+      <category term="AI" scheme="https://blog.allmattersai.com/categories/AI/"/>
+    
+      <category term="Deep Learning Fundamentals" scheme="https://blog.allmattersai.com/categories/AI/Deep-Learning-Fundamentals/"/>
+    
+    
+      <category term="Deep Learning" scheme="https://blog.allmattersai.com/tags/Deep-Learning/"/>
+    
+      <category term="Neural Networks" scheme="https://blog.allmattersai.com/tags/Neural-Networks/"/>
+    
+      <category term="Momentum Mini Series" scheme="https://blog.allmattersai.com/tags/Momentum-Mini-Series/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Nesterov Accelerated Gradient</title>
     <link href="https://blog.allmattersai.com/nesterov-accelerated-gradient/"/>
     <id>https://blog.allmattersai.com/nesterov-accelerated-gradient/</id>
     <published>2018-06-20T00:42:04.000Z</published>
-    <updated>2018-06-20T04:33:25.523Z</updated>
+    <updated>2018-06-22T05:59:42.139Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;h2 id=&quot;Correction-Factor&quot;&gt;&lt;a href=&quot;#Correction-Factor&quot; class=&quot;headerlink&quot; title=&quot;Correction Factor&quot;&gt;&lt;/a&gt;Correction Factor&lt;/h2&gt;&lt;p&gt;While
-        
-      
+      &lt;h2 id=&quot;Correction-Factor&quot;&gt;&lt;a href=&quot;#Correction-Factor&quot; class=&quot;headerlink&quot; title=&quot;Correction Factor&quot;&gt;&lt;/a&gt;Correction Factor&lt;/h2&gt;&lt;p&gt;While using momentum, we updated $V$ and then applied part of $V$ to the weight update. The idea of Nesterov Accelerated Gradient(NAG) is to update the current weight by a small part of $V$ and then calculate the gradient of the updated weight. The small part by which we update the current weight is called the &lt;strong&gt;correction factor&lt;/strong&gt; which is $\alpha V$. Simply put, we changed the position where the gradient is calculated. So for each iteration in gradient descent, the updates would be as follows&lt;br&gt;
     
     </summary>
     
