@@ -3,6 +3,33 @@
   
     
     <entry>
+      <title>AdaDelta</title>
+      <link href="/adadelta/"/>
+      <url>/adadelta/</url>
+      <content type="html"><![CDATA[<h2 id="Average-over-a-window"><a href="#Average-over-a-window" class="headerlink" title="Average over a window"></a>Average over a window</h2><p><strong>AdaDelta</strong> corrects the decreasing gradient problem caused by AdaGrad. It does this with a simple idea.<a id="more"></a> Instead of summing over all the squared gradients so far, only sum over the last $w$ squared gradients and take the mean of it. Since storing all the previous $w$ squared gradients is inefficient, just take the exponentially decaying average of the squared gradients. The equations would be as follows</p><p>$$<br>\text{let} \frac{\partial E}{\partial W} = g, \text{ At the step t of training}\\<br>\underbrace{E[g^2]_t}_{\text{average of squared gradient}} = \gamma E[g^2]_{t-1} + (1-\gamma){g_t}^2\\<br>$$<br>But we don’t need the squared gradient, only the gradient. So apply square root. Which gives you nothing but the Root Mean Squared (RMS)} result.<br>$$<br>RMS[g]_t = \sqrt{E[g^2]_t + \epsilon}\\<br>\text{Here} \epsilon \text{ does the same job as in AdaGrad. The update in the step t is}\\<br>update_t = \frac{-\eta}{RMS[g]_t}g_t<br>$$</p><h2 id="Correct-for-units"><a href="#Correct-for-units" class="headerlink" title="Correct for units"></a>Correct for units</h2><p>When applying the update to the weights, the updates should be of the same units as of the weights. The units here are hypothetical. So, the following idea is based on the assumption that if the weights had a unit, the update should have the same. Maintaining the integrity of the units is not done in SGD, momentum or AdaGrad. AdaDelta corrects this by adding another exponentially decaying average of $\Delta W$and taking the RMS of it. (As to why this works, you need to understand Newton’s method. If you do, then read this <a href="https://arxiv.org/pdf/1212.5701.pdf#subsection.3.2" target="_blank" rel="noopener">section</a> in the original paper. Else, move on without any worries.)</p><p>$$<br>E[\Delta W^2]_t = \gamma E[\Delta W^2]_{t-1} + (1 - \gamma) \Delta W^2 \\<br>RMS[\Delta W]_t = \sqrt{E[\Delta W^2]_t + \epsilon}<br>$$</p><p>As we don’t know $RMS[\Delta W]_t$ at the time step $t$, approximate it with the RMS of the weight updates till the last step, which is $RMS[\Delta W]_{t-1}$. So our final AdaDelta update is obtained by replacing the learning rate with the $RMS[\Delta W]_{t-1}$.</p><p>$$<br>\Delta W = -\frac{RMS[\Delta W]_{t-1}}{RMS[g]_t}g_t\\<br>W \leftarrow W + \Delta W<br>$$</p><h2 id="Advantages-over-Momentum-Nesterov-and-AdaGrad"><a href="#Advantages-over-Momentum-Nesterov-and-AdaGrad" class="headerlink" title="Advantages over Momentum, Nesterov and AdaGrad"></a>Advantages over Momentum, Nesterov and AdaGrad</h2><p>Notice that there is no need to set a learning parameter in the AdaDelta method. This is the main advantage over all the others we’ve seen so far. Let’s see a similar algorithm (RMSProp) which tries to correct the gradient explosion problem of AdaGrad. Enjoy the end of the post comic.</p><p><img src="https://imgs.xkcd.com/comics/magnus.png" alt="XKCD Comic"></p>]]></content>
+      
+      <categories>
+          
+          <category> AI </category>
+          
+          <category> Deep Learning Fundamentals </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Deep Learning </tag>
+            
+            <tag> Neural Networks </tag>
+            
+            <tag> Momentum Mini Series </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>AdaGrad</title>
       <link href="/adagrad/"/>
       <url>/adagrad/</url>
@@ -287,13 +314,6 @@
   
     
     <entry>
-      <title>Categories</title>
-      <link href="/categories/index.html"/>
-      <url>/categories/index.html</url>
-      <content type="html"><![CDATA[]]></content>
-    </entry>
-    
-    <entry>
       <title>Hello World</title>
       <link href="/about/index.html"/>
       <url>/about/index.html</url>
@@ -304,6 +324,13 @@
       <title>Portfolio</title>
       <link href="/portfolio/index.html"/>
       <url>/portfolio/index.html</url>
+      <content type="html"><![CDATA[]]></content>
+    </entry>
+    
+    <entry>
+      <title>Categories</title>
+      <link href="/categories/index.html"/>
+      <url>/categories/index.html</url>
       <content type="html"><![CDATA[]]></content>
     </entry>
     

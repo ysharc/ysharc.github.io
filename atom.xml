@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.allmattersai.com/"/>
-  <updated>2018-06-22T05:59:00.879Z</updated>
+  <updated>2018-06-25T00:07:19.093Z</updated>
   <id>https://blog.allmattersai.com/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>AdaDelta</title>
+    <link href="https://blog.allmattersai.com/adadelta/"/>
+    <id>https://blog.allmattersai.com/adadelta/</id>
+    <published>2018-06-24T00:42:04.000Z</published>
+    <updated>2018-06-25T00:07:19.093Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;Average-over-a-window&quot;&gt;&lt;a href=&quot;#Average-over-a-window&quot; class=&quot;headerlink&quot; title=&quot;Average over a window&quot;&gt;&lt;/a&gt;Average over a window&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;AdaDelta&lt;/strong&gt; corrects the decreasing gradient problem caused by AdaGrad. It does this with a simple idea.
+    
+    </summary>
+    
+      <category term="AI" scheme="https://blog.allmattersai.com/categories/AI/"/>
+    
+      <category term="Deep Learning Fundamentals" scheme="https://blog.allmattersai.com/categories/AI/Deep-Learning-Fundamentals/"/>
+    
+    
+      <category term="Deep Learning" scheme="https://blog.allmattersai.com/tags/Deep-Learning/"/>
+    
+      <category term="Neural Networks" scheme="https://blog.allmattersai.com/tags/Neural-Networks/"/>
+    
+      <category term="Momentum Mini Series" scheme="https://blog.allmattersai.com/tags/Momentum-Mini-Series/"/>
+    
+  </entry>
   
   <entry>
     <title>AdaGrad</title>

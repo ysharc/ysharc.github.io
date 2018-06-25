@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://blog.allmattersai.com/adadelta/</loc>
+    
+    <lastmod>2018-06-25T00:07:19.093Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://blog.allmattersai.com/nesterov-accelerated-gradient/</loc>
     
     <lastmod>2018-06-22T05:59:42.139Z</lastmod>
