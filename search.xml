@@ -3,6 +3,33 @@
   
     
     <entry>
+      <title>RMSProp</title>
+      <link href="/rmsprop/"/>
+      <url>/rmsprop/</url>
+      <content type="html"><![CDATA[<h2 id="Exponentially-Decaying-average"><a href="#Exponentially-Decaying-average" class="headerlink" title="Exponentially Decaying average"></a>Exponentially Decaying average</h2><p>The idea of RMSProp is similar to what you saw in the AdaDelta’s first step. It maintains a exponentially decaying average of the squared gradients.<br><a id="more"></a><br>$$<br>\text{let} \frac{\partial E}{\partial W} = g, \text{ At the step t of training}\\<br>\underbrace{E[g^2]_t}_{\text{average of squared gradient}} = \gamma E[g^2]_{t-1} + (1-\gamma){g_t}^2\\<br>W \leftarrow W - \dfrac{\eta}{\sqrt{\epsilon + E[g^2]_t}}g_t<br>$$</p><p>A good suggested value for $\gamma$ is 0.9, and for $\eta$ is 0.001. $\epsilon$ has the same job as in AdaGrad.</p><p>In the next post let’s see “Adam” (Adaptive Moments), which improvises on RMSProp and momentum. It is considered a default in many DeepLearning settings. Enjoy the end of post comic.</p><p><img src="https://imgs.xkcd.com/comics/turing_test.png" alt="XKCD Comic"></p>]]></content>
+      
+      <categories>
+          
+          <category> AI </category>
+          
+          <category> Deep Learning Fundamentals </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Deep Learning </tag>
+            
+            <tag> Neural Networks </tag>
+            
+            <tag> Momentum Mini Series </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>AdaDelta</title>
       <link href="/adadelta/"/>
       <url>/adadelta/</url>

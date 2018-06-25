@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.allmattersai.com/"/>
-  <updated>2018-06-25T00:07:19.093Z</updated>
+  <updated>2018-06-25T23:46:41.040Z</updated>
   <id>https://blog.allmattersai.com/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>RMSProp</title>
+    <link href="https://blog.allmattersai.com/rmsprop/"/>
+    <id>https://blog.allmattersai.com/rmsprop/</id>
+    <published>2018-06-26T00:42:04.000Z</published>
+    <updated>2018-06-25T23:46:41.040Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;Exponentially-Decaying-average&quot;&gt;&lt;a href=&quot;#Exponentially-Decaying-average&quot; class=&quot;headerlink&quot; title=&quot;Exponentially Decaying average&quot;&gt;&lt;/a&gt;Exponentially Decaying average&lt;/h2&gt;&lt;p&gt;The idea of RMSProp is similar to what you saw in the AdaDelta’s first step. It maintains a exponentially decaying average of the squared gradients.&lt;br&gt;
+    
+    </summary>
+    
+      <category term="AI" scheme="https://blog.allmattersai.com/categories/AI/"/>
+    
+      <category term="Deep Learning Fundamentals" scheme="https://blog.allmattersai.com/categories/AI/Deep-Learning-Fundamentals/"/>
+    
+    
+      <category term="Deep Learning" scheme="https://blog.allmattersai.com/tags/Deep-Learning/"/>
+    
+      <category term="Neural Networks" scheme="https://blog.allmattersai.com/tags/Neural-Networks/"/>
+    
+      <category term="Momentum Mini Series" scheme="https://blog.allmattersai.com/tags/Momentum-Mini-Series/"/>
+    
+  </entry>
   
   <entry>
     <title>AdaDelta</title>
