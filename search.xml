@@ -3,6 +3,33 @@
   
     
     <entry>
+      <title>AdaMax</title>
+      <link href="/adamax/"/>
+      <url>/adamax/</url>
+      <content type="html"><![CDATA[<h2 id="A-quick-tweak-to-Adam"><a href="#A-quick-tweak-to-Adam" class="headerlink" title="A quick tweak to Adam"></a>A quick tweak to Adam</h2><p><strong>AdaMax</strong> is a variant of Adam. It uses an infinity norm to normalize $\hat{m_t}$ instead of the $L^2$ norm of individual current and past gradients used in Adam. So the new steps for updating weights is as follows<br><a id="more"></a><br>$$<br>\text{let} \frac{\partial E}{\partial W} = g_t, \text{ At the step t of training}\\<br>\begin{align}<br>m_t &amp;\leftarrow \beta_1 m_{t-1} + (1 - \beta_1)g_t\\<br>u_t &amp;\leftarrow \text{max}(\beta_2 u_{t-1}, |g_t|) \\<br>\hat{m_t} &amp;\leftarrow \dfrac{m_t}{1 - \beta_1^t}\\<br>W &amp;\leftarrow W - \dfrac{\eta m_t}{u_t + \epsilon}\\<br>\end{align}<br>$$</p><p>As $u_t$ relies on the max operation, bias correction is not done for this term alone.</p><h2 id="Recommended-Values"><a href="#Recommended-Values" class="headerlink" title="Recommended Values"></a>Recommended Values</h2><p>The authors of the <a href="https://arxiv.org/pdf/1412.6980v9.pdf" target="_blank" rel="noopener">paper</a> (see <strong>Algorithm 1</strong>) recommend the following default values</p><p>$$<br>\begin{align}<br>\eta &amp;= 0.002\\<br>\beta_{1} &amp;= 0.9\\<br>\beta_{2} &amp;= 0.999\\<br>\end{align}<br>$$</p><p>In the next post let’s see Nadam, which combines Nesterov Accelerated Gradient and Adam. Enjoy your end of the post comic.</p><p><img src="https://imgs.xkcd.com/comics/conversation.png" alt="XKCD Comic"></p>]]></content>
+      
+      <categories>
+          
+          <category> AI </category>
+          
+          <category> Deep Learning Fundamentals </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Deep Learning </tag>
+            
+            <tag> Neural Networks </tag>
+            
+            <tag> Momentum Mini Series </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>Adam</title>
       <link href="/adam/"/>
       <url>/adam/</url>
@@ -368,6 +395,20 @@
   
     
     <entry>
+      <title>Hello World</title>
+      <link href="/about/index.html"/>
+      <url>/about/index.html</url>
+      <content type="html"><![CDATA[]]></content>
+    </entry>
+    
+    <entry>
+      <title>Categories</title>
+      <link href="/categories/index.html"/>
+      <url>/categories/index.html</url>
+      <content type="html"><![CDATA[]]></content>
+    </entry>
+    
+    <entry>
       <title>Portfolio</title>
       <link href="/portfolio/index.html"/>
       <url>/portfolio/index.html</url>
@@ -382,13 +423,6 @@
     </entry>
     
     <entry>
-      <title>timeline</title>
-      <link href="/timeline/index.html"/>
-      <url>/timeline/index.html</url>
-      <content type="html"><![CDATA[]]></content>
-    </entry>
-    
-    <entry>
       <title>Topics</title>
       <link href="/tags/index.html"/>
       <url>/tags/index.html</url>
@@ -396,16 +430,9 @@
     </entry>
     
     <entry>
-      <title>Hello World</title>
-      <link href="/about/index.html"/>
-      <url>/about/index.html</url>
-      <content type="html"><![CDATA[]]></content>
-    </entry>
-    
-    <entry>
-      <title>Categories</title>
-      <link href="/categories/index.html"/>
-      <url>/categories/index.html</url>
+      <title>timeline</title>
+      <link href="/timeline/index.html"/>
+      <url>/timeline/index.html</url>
       <content type="html"><![CDATA[]]></content>
     </entry>
     

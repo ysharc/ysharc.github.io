@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.allmattersai.com/"/>
-  <updated>2018-06-28T00:58:11.278Z</updated>
+  <updated>2018-06-30T00:02:25.936Z</updated>
   <id>https://blog.allmattersai.com/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>AdaMax</title>
+    <link href="https://blog.allmattersai.com/adamax/"/>
+    <id>https://blog.allmattersai.com/adamax/</id>
+    <published>2018-06-30T00:42:04.000Z</published>
+    <updated>2018-06-30T00:02:25.936Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;A-quick-tweak-to-Adam&quot;&gt;&lt;a href=&quot;#A-quick-tweak-to-Adam&quot; class=&quot;headerlink&quot; title=&quot;A quick tweak to Adam&quot;&gt;&lt;/a&gt;A quick tweak to Adam&lt;/h2&gt;&lt;p&gt;&lt;strong&gt;AdaMax&lt;/strong&gt; is a variant of Adam. It uses an infinity norm to normalize $\hat{m_t}$ instead of the $L^2$ norm of individual current and past gradients used in Adam. So the new steps for updating weights is as follows&lt;br&gt;
+    
+    </summary>
+    
+      <category term="AI" scheme="https://blog.allmattersai.com/categories/AI/"/>
+    
+      <category term="Deep Learning Fundamentals" scheme="https://blog.allmattersai.com/categories/AI/Deep-Learning-Fundamentals/"/>
+    
+    
+      <category term="Deep Learning" scheme="https://blog.allmattersai.com/tags/Deep-Learning/"/>
+    
+      <category term="Neural Networks" scheme="https://blog.allmattersai.com/tags/Neural-Networks/"/>
+    
+      <category term="Momentum Mini Series" scheme="https://blog.allmattersai.com/tags/Momentum-Mini-Series/"/>
+    
+  </entry>
   
   <entry>
     <title>Adam</title>
