@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.allmattersai.com/"/>
-  <updated>2018-06-30T00:02:25.936Z</updated>
+  <updated>2018-07-03T00:12:13.295Z</updated>
   <id>https://blog.allmattersai.com/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Nadam</title>
+    <link href="https://blog.allmattersai.com/nadam/"/>
+    <id>https://blog.allmattersai.com/nadam/</id>
+    <published>2018-07-30T00:42:04.000Z</published>
+    <updated>2018-07-03T00:12:13.295Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;Momentum-and-Nesterov-Accelerated-Gradient&quot;&gt;&lt;a href=&quot;#Momentum-and-Nesterov-Accelerated-Gradient&quot; class=&quot;headerlink&quot; title=&quot;Momentum and Nesterov Accelerated Gradient&quot;&gt;&lt;/a&gt;Momentum and Nesterov Accelerated Gradient&lt;/h2&gt;&lt;p&gt;We know that momentum updates the weights in the following way&lt;/p&gt;&lt;p&gt;$$&lt;br&gt;g_t \leftarrow \dfrac{\partial E}{\partial W_t}\\&lt;br&gt;V \leftarrow \beta V + \epsilon g_t\\&lt;br&gt;W \leftarrow W - V\\&lt;br&gt;$$&lt;/p&gt;&lt;p&gt;Writing the update in one step gives us&lt;/p&gt;&lt;p&gt;$$&lt;br&gt;W_{t+1} \leftarrow W_{t} - (\beta V_{t-1} + \epsilon g_t)&lt;br&gt;$$&lt;br&gt;
+    
+    </summary>
+    
+      <category term="AI" scheme="https://blog.allmattersai.com/categories/AI/"/>
+    
+      <category term="Deep Learning Fundamentals" scheme="https://blog.allmattersai.com/categories/AI/Deep-Learning-Fundamentals/"/>
+    
+    
+      <category term="Deep Learning" scheme="https://blog.allmattersai.com/tags/Deep-Learning/"/>
+    
+      <category term="Neural Networks" scheme="https://blog.allmattersai.com/tags/Neural-Networks/"/>
+    
+      <category term="Momentum Mini Series" scheme="https://blog.allmattersai.com/tags/Momentum-Mini-Series/"/>
+    
+  </entry>
   
   <entry>
     <title>AdaMax</title>
@@ -47,7 +73,7 @@
     <link href="https://blog.allmattersai.com/adam/"/>
     <id>https://blog.allmattersai.com/adam/</id>
     <published>2018-06-28T00:42:04.000Z</published>
-    <updated>2018-06-28T00:58:11.278Z</updated>
+    <updated>2018-07-02T23:48:38.151Z</updated>
     
     <summary type="html">
     
@@ -151,7 +177,7 @@
     <link href="https://blog.allmattersai.com/nesterov-accelerated-gradient/"/>
     <id>https://blog.allmattersai.com/nesterov-accelerated-gradient/</id>
     <published>2018-06-20T00:42:04.000Z</published>
-    <updated>2018-06-22T05:59:42.139Z</updated>
+    <updated>2018-07-03T00:12:48.244Z</updated>
     
     <summary type="html">
     

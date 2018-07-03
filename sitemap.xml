@@ -2,16 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>https://blog.allmattersai.com/adamax/</loc>
+    <loc>https://blog.allmattersai.com/nesterov-accelerated-gradient/</loc>
     
-    <lastmod>2018-06-30T00:02:25.936Z</lastmod>
+    <lastmod>2018-07-03T00:12:48.244Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.allmattersai.com/nadam/</loc>
+    
+    <lastmod>2018-07-03T00:12:13.295Z</lastmod>
     
   </url>
   
   <url>
     <loc>https://blog.allmattersai.com/adam/</loc>
     
-    <lastmod>2018-06-28T00:58:11.278Z</lastmod>
+    <lastmod>2018-07-02T23:48:38.151Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://blog.allmattersai.com/adamax/</loc>
+    
+    <lastmod>2018-06-30T00:02:25.936Z</lastmod>
     
   </url>
   
@@ -26,13 +40,6 @@
     <loc>https://blog.allmattersai.com/adadelta/</loc>
     
     <lastmod>2018-06-25T00:07:19.093Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://blog.allmattersai.com/nesterov-accelerated-gradient/</loc>
-    
-    <lastmod>2018-06-22T05:59:42.139Z</lastmod>
     
   </url>
   
