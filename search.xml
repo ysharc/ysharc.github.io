@@ -3,6 +3,33 @@
   
     
     <entry>
+      <title>Optimizing Algorithms - Recap and Resources</title>
+      <link href="/optimizing-algorithms-recap-and-resources/"/>
+      <url>/optimizing-algorithms-recap-and-resources/</url>
+      <content type="html"><![CDATA[<p>Till now we’ve seen the following optimizations for gradient descent.<br><a id="more"></a></p><ol><li><a href="/nesterov-accelerated-gradient/">Nesterov Accelerated Gradient</a></li><li><a href="/adagrad">AdaGrad</a></li><li><a href="/adadelta">AdaDelta</a></li><li><a href="/rmsprop">RMSProp</a></li><li><a href="/adam">Adam</a></li><li><a href="/adamax">Adamax</a></li><li><a href="/nadam">Nadam</a></li></ol><p>The structure and order have been taken from Ruder’s excellent article on <a href="http://ruder.io/optimizing-gradient-descent/" target="_blank" rel="noopener">optimizing gradient descent</a>. You can also see comparative analysis in this article. To understand momentum on a deeper level read this <a href="https://distill.pub/2017/momentum/" target="_blank" rel="noopener">article on distill</a>.</p><p>Starting next week, let’s start writing our own deep learning library. Not for the purpose of re-inventing the wheel, but to test our own understanding and build a better intuition. Also, parallel to it, let’s start dealing with image data.</p><p><img src="https://imgs.xkcd.com/comics/future_self.png" alt="XKCD Comic"></p>]]></content>
+      
+      <categories>
+          
+          <category> AI </category>
+          
+          <category> Deep Learning Fundamentals </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Deep Learning </tag>
+            
+            <tag> Neural Networks </tag>
+            
+            <tag> Momentum Mini Series </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
       <title>Nadam</title>
       <link href="/nadam/"/>
       <url>/nadam/</url>
@@ -422,6 +449,13 @@
   
     
     <entry>
+      <title>Hello World</title>
+      <link href="/about/index.html"/>
+      <url>/about/index.html</url>
+      <content type="html"><![CDATA[]]></content>
+    </entry>
+    
+    <entry>
       <title>Categories</title>
       <link href="/categories/index.html"/>
       <url>/categories/index.html</url>
@@ -446,13 +480,6 @@
       <title>Topics</title>
       <link href="/tags/index.html"/>
       <url>/tags/index.html</url>
-      <content type="html"><![CDATA[]]></content>
-    </entry>
-    
-    <entry>
-      <title>Hello World</title>
-      <link href="/about/index.html"/>
-      <url>/about/index.html</url>
       <content type="html"><![CDATA[]]></content>
     </entry>
     
