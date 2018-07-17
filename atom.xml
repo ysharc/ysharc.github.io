@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.allmattersai.com/"/>
-  <updated>2018-07-04T13:31:00.770Z</updated>
+  <updated>2018-07-17T13:47:57.938Z</updated>
   <id>https://blog.allmattersai.com/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Vectorization</title>
+    <link href="https://blog.allmattersai.com/vectorization/"/>
+    <id>https://blog.allmattersai.com/vectorization/</id>
+    <published>2018-07-17T13:42:04.000Z</published>
+    <updated>2018-07-17T13:47:57.938Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h2 id=&quot;Disclaimer&quot;&gt;&lt;a href=&quot;#Disclaimer&quot; class=&quot;headerlink&quot; title=&quot;Disclaimer&quot;&gt;&lt;/a&gt;Disclaimer&lt;/h2&gt;&lt;p&gt;Until the last post, we’ve discussed the basic theory of neural networks. Let’s start with some practice from this post on. You might have seen titles of this form “create your own deep learning thingy in less than 20 or so lines of code”. While the title actually does what it says, under those 20 lines of code are 100s or even 1000s of lines abstracted away for convenience. Starting with this post, you’ll learn to code up a mini deep learning library on your own. As I’ve mentioned earlier, this is not to re-invent the wheel or bring about a new deep learning library to the pool, it’s just to enhance your own understanding of what’s going on under the hood of a deep learning library. We’ll be using python and the numpy module.&lt;br&gt;
+    
+    </summary>
+    
+      <category term="Practical Deep Learning" scheme="https://blog.allmattersai.com/categories/Practical-Deep-Learning/"/>
+    
+    
+      <category term="Programming" scheme="https://blog.allmattersai.com/tags/Programming/"/>
+    
+  </entry>
   
   <entry>
     <title>Optimizing Algorithms - Recap and Resources</title>
@@ -51,7 +71,10 @@
     
     <summary type="html">
     
-      &lt;h2 id=&quot;Momentum-and-Nesterov-Accelerated-Gradient&quot;&gt;&lt;a href=&quot;#Momentum-and-Nesterov-Accelerated-Gradient&quot; class=&quot;headerlink&quot; title=&quot;Momentum and Nesterov Accelerated Gradient&quot;&gt;&lt;/a&gt;Momentum and Nesterov Accelerated Gradient&lt;/h2&gt;&lt;p&gt;We know that momentum updates the weights in the following way&lt;/p&gt;&lt;p&gt;$$&lt;br&gt;g_t \leftarrow \dfrac{\partial E}{\partial W_t}\\&lt;br&gt;V \leftarrow \beta V + \epsilon g_t\\&lt;br&gt;W \leftarrow W - V\\&lt;br&gt;$$&lt;/p&gt;&lt;p&gt;Writing the update in one step gives us&lt;/p&gt;&lt;p&gt;$$&lt;br&gt;W_{t+1} \leftarrow W_{t} - (\beta V_{t-1} + \epsilon g_t)&lt;br&gt;$$&lt;br&gt;
+      &lt;h2 id=&quot;Momentum-and-Nesterov-Accelerated-Gradient&quot;&gt;&lt;a href=&quot;#Momentum-and-Nesterov-Accelerated-Gradient&quot; class=&quot;headerlink&quot; title=&quot;Momentum and Nesterov Accelerated Gradient&quot;&gt;&lt;/a&gt;Momentum and Nesterov Accelerated Gradient&lt;/h2&gt;&lt;p&gt;We know that momentum updates the weights in the following way&lt;/p&gt;
+&lt;p&gt;$$&lt;br&gt;g_t \leftarrow \dfrac{\partial E}{\partial W_t}\\&lt;br&gt;V \leftarrow \beta V + \epsilon g_t\\&lt;br&gt;W \leftarrow W - V\\&lt;br&gt;$$&lt;/p&gt;
+&lt;p&gt;Writing the update in one step gives us&lt;/p&gt;
+&lt;p&gt;$$&lt;br&gt;W_{t+1} \leftarrow W_{t} - (\beta V_{t-1} + \epsilon g_t)&lt;br&gt;$$&lt;br&gt;
     
     </summary>
     
@@ -390,7 +413,7 @@
     <link href="https://blog.allmattersai.com/cost-function-and-gradient-descent/"/>
     <id>https://blog.allmattersai.com/cost-function-and-gradient-descent/</id>
     <published>2018-05-21T03:39:54.000Z</published>
-    <updated>2018-05-24T06:23:55.185Z</updated>
+    <updated>2018-07-15T23:32:35.032Z</updated>
     
     <summary type="html">
     
